@@ -1,0 +1,418 @@
+
+<html ng-app="profileApp">
+<head >
+    <meta charset="utf-8" />
+    <title>走进洛哈思</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/top.css">
+    <!-- basic styles -->
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-cookies.min.js"></script>
+    <script src="script/imgPath.js"></script>
+    <script src="script/const.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="static/css/intoLohas.css">
+    <script src="static/js/jquery.carouFredSel-6.0.4-packed.js"
+            type="text/javascript"></script>
+    <script src="static/js/profile.js"type="text/javascript"></script>
+
+</head>
+<body ng-controller="profile">
+<div id="moon"></div>
+<div style="background-color:#eeeeee">
+    <!-- 公司动态top图片 -->
+    <div>
+        <img alt="" src="static/img/bg.png" style=" height:400px;width: 100%;">
+    </div>
+    <div class="content">
+        <!-- 竖行导航 -->
+        <div class="vnav">
+             <p onclick="intro();" class="pActive">公司简介</p>
+             <p onclick="ceoSpeech();">总经理致辞</p>
+             <p onclick="culture();">企业文化</p>
+        </div>
+        <!-- 公司简介信息 -->
+        <div class="intro">
+        	<h1>苏州洛哈思信息科技有限公司简介</h1>
+        	<img alt="" src="static/img/intro.jpg">
+        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;洛哈思（LOHAS）为Lifestyles of Health and Sustainability的缩写，意为以健康及自给自足的形态过生活，是全球兴起的一种新的健康可持续生活方式，也称“乐活”。
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;苏州洛哈思信息科技有限公司（以下简称苏州洛哈思）成立于2015年10月，注册资本1000万，是一家研发、生产和经营健康管理与智慧养老服务设备的高科技公司。公司核心技术团队以博士、硕士为主，其中硕士及以上学历占比90%，博士学历30%，均具有丰富的专业知识以及行业经验。
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司目前的主要产品有：智能手表、无线血压血糖仪、空气质量监测设备、智能体重秤、无线血氧仪、无线单导心电设备、定位设备、视频、呼叫设备等，力求打造医疗级身体健康数据监测设备，以及完善的智慧养老服务体系。
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016年4月，苏州洛哈思在沈阳注册成立了全资子公司——沈阳洛哈思信息科技有限公司，注册资本100万，主要职能为公司的智能研发中心，以高智商、高学历、高素质，满足洛哈思产品的高品质需求。
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;截至目前，公司已先后申报并受理五项专利，其中两项已经进入实质审查阶段。同时公司正在申报两个医疗器械产品的注册。
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未来，苏州洛哈思将继续秉承 “健康、快乐，环保、可持续”的核心理念，以监测数据精准化为基本准则、以健康管理及智慧养老服务专业化为发展方向，不断完善和创新企业管理，进一步提升企业核心竞争力，努力将苏州哈洛思打造成为行业领军企业。
+			<br>
+				<span style="font-weight:bold">合作伙伴：</span>
+				<ul>
+					<li>
+						沈阳军区总医院
+					</li>
+					<li>
+						中国医科大学、辽宁中医药大学、东北大学、上海交通大学、浙江大学等
+					</li>
+					<li>
+						沈阳多宝星科技有限公司
+					</li>
+					<li>
+						澳洲Telemedcare Pty Ltd
+					</li>
+					<li>
+						中国建材市场协会适老产业分会
+					</li>
+					<li>
+						辽宁智飞科技有限公司
+					</li>
+					<li>
+						辽宁中医
+					</li>
+					<li>
+						无锡市康复医院
+					</li>
+					<li>
+						山东万杰集团
+					</li>
+					<li>
+						沈阳市广场舞协会签订战略合作协议
+					</li>
+				</ul>
+        </div>
+        <!-- 董事长致辞 -->
+        <div class="ceoSpeech">
+        	<h1>苏州洛哈思总经理致辞</h1>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作为一家致力于健康管理与智慧养老服务的高科技公司，苏州洛哈思信息科技有限公司一直秉承着“预防大于治疗”的经营理念，引领行业发展潮流。研发出业内首个医疗级精准度、连续监测身体健康数据的智能手表，让客户最大程度了解自身健康情况的同时，弥补了医院以身体的瞬时数据判断病情的弊端；家用智能康复设备，令病人术后快速度恢复自理能力；打鼾监控干预设备，预防睡眠窒息情况的发生……
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			苏州洛哈思的成立并非空中楼阁，而是由一支高学历、高素质的研发团队，经历十余年的苦心孤诣共同建造，核心技术团队的硕士及以上学历上占比高达90%，本科及以上学历100%。经过十余年的研发与追寻，公司最终确定了以研发、生产和经营健康管理与智慧养老服务设备为发展方向，提高现今社会人群对“健康管理”重要性的认知，以“智能服务”重新定义养老生活，提高生命质量。
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在我国，“健康管理”依旧是一个新概念，十三五之后提出的“大健康”建设，把提高全民健康管理水平放在国家战略高度。根据“规划”，群众健康将从医疗转向预防为主，不断提高民众的自我健康管理意识。而我司则紧跟国家发展纲要，积极进行新产品研发，按照国家对关注全民健康的重要指示，全面发展全民健康管理事业，形成“监测-上传-分析-干预”的健康管理体系——连续精准监测健康数据，上传到系统并全面分析，形成评估报告，及早让客户对自身健康有全面了解，及时对病症发生做出预判，降低慢病发病率。
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司另一主营业务为智慧养老服务设备的研发及生产经营。智慧养老也称为全智能化老年系统，这种模式能让老人在日常生活中不受时间和地理环境的束缚，在自己家中过上高质量高享受的生活，颠覆了传统“靠子女养老”“靠医护人员养老”的养老方式，以更安全、更高效、更智能的方式科学养老。
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;苏州洛哈思信息科技有限公司自成立起，一直以为客户创造健康生活，为社会承担健康责任为己任，我们将以行动实践承诺，增强企业实力，增加品牌价值。至此，我谨代表公司全体员工向关心和支持洛哈思发展的社会各界致以诚挚的谢意！
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发展企业，造福员工，回报社会，这是洛哈思始终坚守的责任，我们必将发挥自身人才、技术优势，锐意进取，开拓创新，同时与合作伙伴携手并进，以更好的产品，更优质的服务回馈客户，共创未来！
+        </div>
+        <!-- 企业文化-->
+        <div class="culture">
+        	<h1>苏州洛哈思企业文化</h1>
+			<h3 style="margin-top: 16px;">一、企业使命：</h3>
+				<p>聚焦健康管理与智慧养老服务技术研发，提供医疗级身体健康数据监测设备，让普通人能够时刻准确了解自身健康情况。秉承“预防大于治疗”的经营理念，为客户的身体健康及养老生活提供强有力的后台保障。</p>
+			<h3 style="margin-top: 16px;">二、企业经营宗旨：</h3>
+			<p>为客户创造健康生活</p>
+			<p>为企业创造市场价值</p>
+			<p>为员工创造切实利益</p>
+			<p>为社会承担健康责任</p>
+			（1）	为客户创造健康生活
+			<ul>
+				<li>产品涵盖医疗、智能可穿戴、环境健康监测等多领域</li>
+				<li>核心技术团队硕士以上学历高达90%</li>
+				<li>专家级智囊团的辅助研发</li>
+				<li>专业医生平台的签约合作</li>
+				<li>“监测-上传-分析-干预”的闭环健康管理体系</li>
+				<li>终端设备、云服务平台、手机APP同步发力全面关注客户健康</li>
+				<li>云平台可贯穿大健康产业链的各个环节</li>
+				<li>医疗级精准度的身体健康数据监测</li>
+				<li>强大的后台服务系统，自动生成健康评估报告</li>
+			</ul>
+			（2）	为企业创造市场价值
+			<ul>
+				<li>“技术过硬、产品专业、服务全面”的品牌价值</li>
+				<li>一流的研发制造团队，保证产品品质的经营价值</li>
+				<li>诚信为本，消费者健康至上的信用价值</li>
+			</ul>
+			（3）	为员工创造切实利益
+			<ul>
+				<li>有广阔平台，充分施展个人能力</li>
+				<li>有学习机会，深度发掘个人潜力</li>
+				<li>有良好环境，保证工作身心愉悦</li>
+				<li>有公平待遇，付出与回报成正比</li>
+			</ul>
+			（4）	为社会承担健康责任
+			<ul>
+				<li>弥补现代医疗界无法对身体健康数据连续监测的不足，辅助做出更精准的身体检验结果</li>
+				<li>医疗级身体健康数据连续监测，加以后台分析干预，降低心脑血管、糖尿病等慢性病的发病率</li>
+				<li>提升社会对健康管理重要程度的认知，认同“防大于治”的日常健康管理方式</li>
+				<li>改变传统养老方式，以更安全、更高效、更智能的方式重新定义养老生活</li>
+			</ul>
+			<h3 style="margin-top: 16px;">三、企业精神</h3>
+			<p>热爱社会：时刻谨记，自己所做的是一项为社会谋福祉、为客户的健康可持续生活做贡献的事业。
+			热爱公司：潜心钻研、真诚奉献，以公司兴盛为己任，以公司发展方向为个人职业规划标杆。
+			勇于挑战：发挥优势，挖掘潜力，敬业爱岗，勇于挑战。在工作中不断学习，在学习中不断提升。
+			实现价值：转换学习能力为工作能力，以工作成果为企业创造收益。
+			</p>
+			<h3 style="margin-top: 16px;">四、企业愿景</h3>
+			<p>致力于健康管理与智慧养老服务事业，努力将苏州哈洛思打造成为行业领军企业。</p>
+        	
+        </div>
+    </div>
+
+
+    <div id="moom" style="background-color: #eeeeee;"></div>
+    <script>
+        $( "#moom" ).load( "footer.html", function( response, status, xhr ) {
+            $('#moom').html(response);
+        });
+    </script>
+    <script>
+        $( "#moon" ).load( "top.html", function( response, status, xhr ) {
+            $('#moon').html(response);
+        });
+    </script>
+    <style type="text/css">
+        .footer_2 {
+            background-color: #2dd568;
+            height: 60px;
+        }
+
+        .footer_2d {
+            width: 910px;
+        }
+
+        .allFooter {
+            margin-left: 15%;
+            width: 910px;
+        }
+
+        .footer {
+            background-color: #2dd568;
+            height: 280px;
+        }
+
+        .footer a {
+            font-size: 40px;
+            color: #ffffff;
+        }
+
+        .footer_1 {
+            float: left;
+            margin-top: 75px;
+        }
+
+        .footer li {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            list-style-type: none;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        html,body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            min-height: 350px;
+        }
+
+        body * {
+            font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+            font-size: 14px;
+            color: #333;
+            line-height: 22px;
+        }
+
+        #wrapper {
+            width: 735px;
+            height: 220px;
+            left: 50%;
+            top: 50%;
+        }
+
+        #carousel {
+            width: 735px;
+            position: vrelative;
+        }
+
+        #carousel ul {
+            list-style: none;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+
+        #carousel li {
+            background: transparent url(static/images/carousel_polaroid.png)
+            no-repeat 0 0;
+            font-size: 40px;
+            color: #999;
+            text-align: center;
+            display: block;
+            width: 232px;
+            height: 178px;
+            padding: 0;
+            margin: 6px;
+            float: left;
+            position: relative;
+        }
+
+        #carousel li img {
+            width: 201px;
+            height: 127px;
+            margin-top: 14px;
+        }
+
+        #carousel li span {
+            background: transparent url(static/images/carousel_shine.png) no-repeat
+            0 0;
+            text-indent: -999px;
+            display: block;
+            overflow: hidden;
+            width: 201px;
+            height: 127px;
+            position: absolute;
+            z-index: 2;
+            top: 14px;
+            left: 16px;
+        }
+
+        .clearfix {
+            width: 700px;
+            float: none;
+            clear: both;
+        }
+
+        #carousel .prev,#carousel .next {
+            background: transparent url(static/images/carousel_control.png)
+            no-repeat 0 0;
+            text-indent: -999px;
+            display: block;
+            overflow: hidden;
+            width: 15px;
+            height: 21px;
+            margin-left: 10px;
+            top: 70px;
+            margin-left: -750px;
+            margin-top: -120px;
+        }
+
+        #carousel .prev {
+            background-position: 0 0;
+            left: -30px;
+        }
+
+        #carousel .prev:hover {
+            left: -31px;
+        }
+
+        #carousel .next {
+            background-position: -18px 0;
+            right: -20px;
+            margin-top: -25px;
+            margin-left: 740px;
+        }
+
+        #carousel .next:hover {
+            right: -21px;
+        }
+
+        #carousel .pager {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #carousel .pager a {
+            background: transparent url(static/images/carousel_control.png)
+            no-repeat -2px -32px;
+            text-decoration: none;
+            text-indent: -999px;
+            display: inline-block;
+            overflow: hidden;
+            width: 8px;
+            height: 8px;
+            margin: 0 5px 0 0;
+        }
+
+        #carousel .pager a.selected {
+            background: transparent url(static/images/carousel_control.png)
+            no-repeat -12px -32px;
+            text-decoration: underline;
+            margin-top: 100px;
+        }
+
+        #source {
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+        }
+
+        #source,#source a {
+            font-size: 12px;
+            color: #999;
+        }
+
+        #donate-spacer {
+            height: 100%;
+        }
+
+        #donate {
+            border-top: 1px solid #999;
+            width: 750px;
+            padding: 50px 75px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #donate p,#donate form {
+            margin: 0;
+            float: left;
+        }
+
+        #donate p {
+            width: 650px;
+        }
+
+        #donate form {
+            width: 100px;
+        }
+    </style>
+</body>
+
+	<script type="text/javascript">
+		function intro(){
+			$(".content").height(1050);
+			$(".vnav p").removeClass("pActive");
+			$(".vnav p").eq(0).addClass("pActive");
+			if($(".intro").css("display") != 'none') return;
+			var $cur = $(".culture").css("display") != 'none' ? $(".culture") : $(".ceoSpeech");
+			$cur.slideUp(500, function(){ $(".intro").slideDown(500); });
+		}
+		function ceoSpeech(){
+			$(".content").height(900);
+			$(".vnav p").removeClass("pActive");
+			$(".vnav p").eq(1).addClass("pActive");
+			if($(".ceoSpeech").css("display") != 'none') return;
+			var $cur = $(".intro").css("display") != 'none' ? $(".intro") : $(".culture");
+			$cur.slideUp(500, function(){ $(".ceoSpeech").slideDown(500); });
+		}
+		function culture(){
+			$(".content").height(1400);
+			$(".vnav p").removeClass("pActive");
+			$(".vnav p").eq(2).addClass("pActive");
+			if($(".culture").css("display") != 'none') return;
+			var $cur = $(".intro").css("display") != 'none' ? $(".intro") : $(".ceoSpeech");
+			$cur.slideUp(500, function(){ $(".culture").slideDown(500); });
+		}
+		
+		$(function(){
+			var url = window.location.href;
+			if(url.indexOf("type") != -1){
+				var arg = url.split("?", 2)[1].split("=")[1];
+				if(1 == arg){
+					$(".intro").css("display","none");
+					$(".content").height(900);
+					$(".vnav p").removeClass("pActive");
+					$(".vnav p").eq(1).addClass("pActive");
+					$(".ceoSpeech").css("display","block");
+				}else if(2 == arg){
+					$(".intro").css("display","none");
+					$(".content").height(1400);
+					$(".vnav p").removeClass("pActive");
+					$(".vnav p").eq(2).addClass("pActive");
+					$(".culture").css("display","block");
+				}
+			}
+		});
+	</script>
+</html>

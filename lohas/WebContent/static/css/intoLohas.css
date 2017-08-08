@@ -1,0 +1,115 @@
+/*走进洛哈思 css*/
+.content {
+	height:1050px;
+	margin-top:50px;
+	margin-left: 20%;
+	margin-right: 20%;
+	background-color: #fff;
+	font-family: "Microsoft Yahei","Arial";
+}
+/*竖向导航样式*/
+.vnav {
+	/*background-color:#00EFC5;*/
+	margin-left: -37px;
+	float: left;
+	width: 171px;
+	height:228px;
+	margin-right: 1%;
+	background-image: url(../img/vnavback.png);
+	font-size: 20px;
+}
+/*导航文字颜色*/
+.vnav p {
+	color:white;
+	font-weight:bold;
+	height:30px;
+	margin-top:23px;
+	margin-bottom:23px;
+	text-align: center;
+	line-height:30px;
+	font-size: 20px;
+}
+/*竖向导航选中效果*/
+.pActive{
+	background-color:#2D3E50;
+}
+.vnav p:hover {
+	background-color:#2D3E50;
+	cursor: pointer;
+}
+/*公司简介*/
+.intro {
+	float:left;
+	width: 76%;
+	height: 100%;
+	line-height: 32px;
+	font-size: 16px;
+}
+.intro h1{
+	text-align:center;
+	font-size: 20px;
+}
+.intro img {
+	float:left;
+	margin-right:10px;
+	margin-bottom:5px;
+	width: 32%;
+}
+.intro ul li {
+	font-size: 16px;
+	line-height: 32px;
+}
+.intro ul {
+	margin-top: 0;
+}
+.intro span {
+	font-size: 16px;
+	display: inline-block;
+	line-height: 32px;
+	height: 32px;
+}
+/*董事长致辞*/
+.ceoSpeech {
+	float:left;
+	width: 76%;
+	height: 100%;
+	font-size: 16px;
+	line-height: 32px;
+	display: none;
+}
+.ceoSpeech h1{
+	text-align:center;
+	font-size: 20px;
+}
+/*企业文化*/
+.culture {
+	float:left;
+	width: 77%;
+	height: 100%;
+	line-height: 32px;
+	font-size: 16px;
+	display: none;
+}
+.culture h1{
+	text-align:center;
+	font-size: 20px;
+}
+.culture h3 {
+	font-size: 16px;
+	margin: 0 0;
+}
+.culture p {
+	text-indent: 2em;
+	font-size: 16px;
+	line-height: 32px;
+	margin: 0 0;
+}
+.culture ul li {
+	font-size: 16px;
+	height: 32px;
+	line-height: 32px;
+}
+.culture ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}

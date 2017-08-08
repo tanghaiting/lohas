@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.dotMapper">
+<resultMap type="Ecole" id="getEcole"> 
+        <id column="id" property="id"/>
+         <result column="ecole" property="ecole" />
+         <result column="type" property="type" />
+          <result column="created_time" property="createdTime" />
+          <result column="user_id" property="userId" />     
+    </resultMap> 
+<insert id="insertEcole">
+	insert into ecole_message
+	(ecole,type,created_time,user_id,created_id)
+	values(${dot},#{type},now(),#{userId},#{createdId})
+	</insert>
+	<!--  <insert id="insertActivity">
+	insert into activity
+	(name,description,expend_ecole,obtain_ecole,created_time,created_id)
+	values(#{name},#{description},#{expendEcole},#{obtainEcole},now(),#{createdId})
+	</insert>
+	
+	 <insert id="insertActivityApply">
+	insert into user_activity_apply
+	(user_id,activity_id,created_time)
+	values(#{code},#{aciitity},now())
+	</insert>
+		
+	
+		
+	<select id="selectActivitys" resultMap="getActivity">
+	select * from activity
+	</select>
+	-->
+	<select id="selectEcole" resultMap="getEcole">
+	select * from ecole_message where user_id=#{code}
+	</select>
+	
+</mapper>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.resourceMapper">
+	<!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！ -->
+	<!-- <resultMap id="UserOprateResourceMap" type="com.risen.capricornus.bean.UserOprateResource"> -->
+	<!-- <id column="id" property="userId" /> -->
+	<!-- <result column="res_number" property="resNumber"/> -->
+	<!-- <result column="created_time" property="createTime"/> -->
+	<!-- <result column="type" property="type"/> -->
+	<!-- </resultMap> -->
+	<!-- 资源 -->
+	<resultMap id="ResourceMap" type="com.risen.cancer.bean.Resource">
+		<result column="id" property="id" />
+		<result column="res_sn" property="resSn" />
+		<result column="res_number" property="resNumber" />
+		<result column="name" property="resName" />
+		<result column="res_author" property="resAuthor" />
+		<result column="res_path" property="resPath" />
+		<result column="res_produce" property="resProduce" />
+		<result column="res_language" property="resLanguage" />
+		<result column="res_property" property="resProperty" />
+		<result column="res_uploaduser" property="resUploaduser" />
+		<result column="res_size" property="resSize" />
+		<result column="res_format" property="resFormat" />
+		<result column="res_createtime" property="resCreatetime" />
+		<result column="res_birth" property="resBirth" />
+		<result column="res_contentdes" property="resContentdes" />
+		<result column="res_appdes" property="resAppdes" />
+		<result column="res_createdes" property="resCreatedes" />
+		<result column="res_scbj" property="resScbj" />
+		<result column="type" property="resRecommendType" />
+		<result column="res_description" property="resDescription" />
+	</resultMap>
+
+	<resultMap type="CodedetailResource" id="codedetailResources">
+		<result column="resource_code" property="resourceCode" />
+		<result column="school_number" property="schoolNumber" />
+		<result column="resource_name" property="resourceName" />
+		<result column="resource_author" property="resourceAuthor" />
+		<result column="production_unit" property="productionUnit" />
+		<result column="teaching_attribute" property="teachingAttribute" />
+		<result column="file_name" property="fileName" />
+		<result column="file_size" property="fileSize" />
+		<result column="file_extensiion_name" property="fileExtensionName" />
+		<result column="content_description" property="contentDescription" />
+		<result column="application_description" property="applicationDescription" />
+		<result column="creative_information" property="creativeInformation" />
+		<result column="resource_address" property="resourceAddress" />
+		<result column="course_association" property="courseAssociation" />
+		<result column="major_association" property="majorAssociation" />
+		<result column="major_direction" property="majorDirection" />
+		<result column="college_association" property="collegeAssociation" />
+		<result column="resource_authentication" property="resourceAuthentication" />
+		<result column="resource_type" property="resourceType" />
+		<result column="resource_format" property="resourceFormat" />
+		<result column="file_pages" property="filePages" />
+		<result column="resolution_wide" property="resolutionWide" />
+		<result column="resolution_heigh" property="resolutionHeigh" />
+		<result column="color_number" property="colorNumner" />
+		<result column="audio_channel" property="audioChannel" />
+		<result column="sampling_frequency" property="samplingFrequency" />
+		<result column="resource_frames" property="resourceFrames" />
+		<result column="virtual_simulation_type" property="virtualSimulationType" />
+		<result column="type_version" property="typeVersion" />
+		<result column="requirement" property="requirement" />
+		<result column="interaction_type" property="interactionType" />
+		<result column="play_time" property="playTime" />
+		<result column="sample_address" property="sampleAddress" />
+		<result column="service_orientation" property="serviceOrientation" />
+		<result column="corresponding_materials" property="correspondingMaterials" />
+		<result column="execution_standard" property="executionStandard" />
+		<result column="applications" property="applications" />
+		<result column="innovatives" property="innovatives" />
+		<result column="resource_status" property="resourceStatus" />
+	</resultMap>
+	
+	<resultMap type="com.risen.cancer.bean.Label" id="getLabels">
+	<id column="id" property="id" />
+	<result  column="label_code" property="code"/>
+	<result column="type" property="type" />
+	</resultMap>
+
+	<!-- 查询资源列表 -->
+	<select id="getResourceList" resultMap="ResourceMap">
+		select * from
+		t_mh_resourceinfo;
+	</select>
+
+	<!-- 根据资源ID查询详细信息 -->
+	<select id="getResourceDetail" resultMap="ResourceMap">
+		select * from
+		t_res
+		where id =#{resID}
+	</select>
+	
+	<!-- 查询资源关联标签 -->
+	<select id="selectResLabels" resultMap="getLabels">
+	select id,label_code,type from t_label_res where res_code=#{_parameter}
+	</select>
+	
+	<select id="selectResImg" resultType="java.lang.String">
+	select path from t_appendix_res where res_code=#{_parameter}
+	</select>
+
+	<!-- 添加资源 -->
+	<insert id="uploadResource">
+		insert into t_res (id,name,res_author,res_description,path,upload_date) values (#{id},#{resName},#{resAuthor},#{resDescription},#{resPath},now())
+	</insert>
+
+	<!-- 添加资源标签关联 -->
+	<insert id="addResToLabel" parameterType="java.util.List">
+		insert into t_label_res (id,label_code,res_code,type) values
+		<foreach collection="list" item="labels" index="index"
+			separator=",">
+			(#{labels.id},#{labels.code},#{labels.resCode},#{labels.type})
+		</foreach>
+	</insert>
+
+	<!-- 添加缩略图 -->
+	<insert id="addResToImg" parameterType="java.util.Map">
+		insert into t_appendix_res (id,res_code,path) values
+		<foreach collection="appendixs" item="appendixs" index="index"
+			separator=",">
+			(uuid(),#{uuid},#{appendixs})
+		</foreach>
+	</insert>
+
+	<!-- 获取资源推荐列表 -->
+	<select id="getRecommendRes" parameterType="java.util.Map" resultMap="ResourceMap">
+		select b.*,CASE WHEN
+		a.res_code=b.id THEN 1 ELSE 0
+		END as type from t_res_recommend a,t_res
+		b where a.type=#{type} limit #{start},#{num}
+	</select>
+
+
+	<!-- 添加收藏记录 -->
+	<insert id="insertResourceData">
+		INSERT INTO
+		`t_collection_resource`(resource_code,school_number,resource_name,resource_name_catalogue,resource_author,production_unit,production_date,
+		teaching_attribute,file_name,file_size,file_extension_name,content_description,application_description,creative_information,resource_address,course_chapter,
+		course_name,course_code,major_association,college_association,resource_authentication,resource_type,resource_format,
+		file_pages,resolution_wide,resolution_heigh,color_number,audio_channel,sampling_frequency,resource_frames,virtual_simulation_type,
+		type_version,requirement,interaction_type,play_time,sample_address,service_orientation,corresponding_materials,
+		execution_standard,applications,innovatives,resource_status)
+		VALUES (#{resourceCode}, #{schoolCode}, #{resourceName},#{resourceNameCatalogue},#{resourceAuthor},#{productionUnit},#{productionDate},#{teachingAttribute},
+		#{fileName},#{resourceSize},#{fileExtensionName},#{contentDescription} , #{applicationDescription}, #{creativeInformation},#{resourceAddress},
+		#{courseChapter},#{courseName},#{courseCode},#{majorAssociation},#{collegeAssociation},#{resourceAuthentication},#{resourceType},#{resourceFormat},
+		#{filePages},#{resolutionWide},#{resolutionHeigh},#{colorNumber},#{audioChannel},#{samplingFrequency},#{resourceFrames},#{virtualSimulationType},
+		#{typeVersion},#{requirement},#{interactionType},#{playTime},#{sampleAddress},#{serviceOrientation},#{correspondingMaterials},
+		#{executionStandard},#{applications},#{innovatives},#{resourceStatus});
+	</insert>
+
+	<update id="updateStatus">
+	update `t_collection_resource set resource_status="5" where resource_code=#{code}
+	</update>
+	<select id="getCodedetailResource" resultMap="codedetailResources">
+		select * from
+		v_codedetail where resource_code=#{code}
+	</select>
+</mapper>

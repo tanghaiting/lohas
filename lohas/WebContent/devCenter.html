@@ -1,0 +1,132 @@
+
+<html ng-app="profileApp">
+<head >
+    <meta charset="utf-8" />
+    <title>研发中心</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- basic styles -->
+    <!-- 导航部分样式 -->
+	<link rel="stylesheet" href="static/css/top.css">
+	<!-- 研发中心css -->
+	<link rel="stylesheet" href="static/css/devCenter.css">
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-cookies.min.js"></script>
+    <script src="script/imgPath.js"></script>
+    <script src="script/const.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="static/js/jquery.carouFredSel-6.0.4-packed.js"
+            type="text/javascript"></script>
+    <script src="static/js/profile.js"type="text/javascript"></script>
+
+</head>
+<body ng-controller="profile">
+<div id="moon"></div>
+<div>
+    <!-- 公司动态top图片 -->
+    <div>
+        <img alt="" src="static/img/bg.png" style=" height:400px;width: 100%;">
+    </div>
+    
+	<div id="coreTec">
+		<div id="corediv">
+			<h1>CORE TECHNOLOGY<br>核 心 技 术</h1>
+		</div>
+		<div id="content">
+			<div id="cnt1">
+				<h5>神经网络技术</h5>
+				<p>与线性拟合的方式相比有效的提高了血压测量的准确度，特别是对较高的血压。误差能控制在5%以内</p>
+			</div>
+			<div id="cnt2">
+				<h5>运动校正技术</h5>
+				<p>有效的纠正了人体在运动过程中脉搏波的改变，消除了运动伪影，能够有效的提高生理参数采集的准确性</p>
+			</div>
+			<div id="cnt3">
+				<h5>环境干扰消除技术</h5>
+				<p>能够有效消除环境光、温度等因素对传感器造成的干扰，提高生理参数测量的准确性</p>
+			</div>
+			<div id="cnt4">
+				<h5>模糊理论</h5>
+				<p>能够有效提高生理参数采集的精准度，能够有效的分析人体血管弹性、血液黏稠度、情绪等生理特征</p>
+			</div>
+			<div id="cnt5">
+				<h5>生物处理器技术</h5>
+				<p>可以做到真正的连续、动态监测血压、心率、呼吸，且准确度达到医疗级，做到国内领先水平</p>
+			</div>
+		</div>
+	</div>
+	<!-- 专利产品 -->
+	<div id="patPro">
+		<div id="patProdiv">
+			<h1>PATENTED PRODUCT<br>专 利 产 品</h1>
+		</div>
+		<div id="content">
+			<div id="cntHeader">
+				<p class="p1">项目名称</p>
+				<p class="p2">专利号或申请号</p>
+				<p class="p3">专利</p>
+				<p class="p4">专利权人</p>
+			</div>
+			<div class="cntBody">
+				<p class="p1">一种心电测量探头和系统</p>
+				<p class="p2">201610986318</p>
+				<p class="p3">发明</p>
+				<p class="p4">苏州洛哈思信息科技有限公司</p>
+			</div>
+			<div class="cntBody1">
+				<p class="p1">一种心电测量方法和装置</p>
+				<p class="p2">201610985835.6</p>
+				<p class="p3">发明</p>
+				<p class="p4">苏州洛哈思信息科技有限公司</p>
+			</div>
+			<div class="cntBody">
+				<p class="p1">一种养老监护系统</p>
+				<p class="p2">201710074083.2</p>
+				<p class="p3">发明</p>
+				<p class="p4">苏州洛哈思信息科技有限公司</p>
+			</div>
+			<div class="cntBody1">
+				<p class="p1">一种养老监护系统</p>
+				<p class="p2">201720123312</p>
+				<p class="p3">实用新型</p>
+				<p class="p4">苏州洛哈思信息科技有限公司</p>
+			</div>
+			<div class="cntBody">
+				<p class="p1">一种心电测量探头和系统</p>
+				<p class="p2">201621209113.3</p>
+				<p class="p3">实用新型</p>
+				<p class="p4">苏州洛哈思信息科技有限公司</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <div id="moom" style="background-color: #eeeeee;"></div>
+    <script>
+        $( "#moom" ).load( "footer.html", function( response, status, xhr ) {
+            $('#moom').html(response);
+        });
+    </script>
+    <script>
+        $( "#moon" ).load( "top.html", function( response, status, xhr ) {
+            $('#moon').html(response);
+        });
+        $(function(){
+			var url = window.location.href;
+			if(url.indexOf("type") != -1){
+				var arg = url.split("?", 2)[1].split("=")[1];
+				if(1 == arg){
+					$("html,body").animate({"scrollTop": "480px"}, 400); 
+				}else if(2 == arg){
+					$("html,body").animate({"scrollTop": "1320px"}, 500); 
+				}
+			}
+		});
+    </script>
+</body>
+</html>

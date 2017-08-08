@@ -1,0 +1,156 @@
+<!-- HEADER SECTION -->
+<html >
+	<script src="static/js/top.js" type="text/javascript"></script>
+<body >
+	<!-- 
+	<div id="top" style="background-color: #2dd568;height: 25px;">
+		<div style="margin-right: 10%;">
+			<div style="float:right;">
+				<a href="http://lhscare.com/XPRO"><p style="margin-top: 0px;float:left;color: #ffffff;">洛哈思服务管理平台</p></a>
+			</div>
+			<div style="float:right">
+				<img alt="" src="static/img/t2.png" style="margin-top: -0;" />
+			</div>
+		</div>
+	</div>
+	 -->
+	<div style="height: 80px;">
+		<div style="margin-left: 15%;position:;position:absolute;top:10px ">
+			<div style="float:left;">
+				<img alt="" src="static/img/logo.png" height="60px">
+			</div>
+		</div>
+		<div style="height: 80px">
+			<ul class="mynavbar">
+				<li class="mysubnav">
+					<a id="a1" class="topMap" ng-click="map(0)"
+						href="index.html"
+						style="font-family:微软雅黑; font-weight:bold;font-size: 16px;">首页</a>
+				</li>
+				<li class="mysubnav">
+					<div><a id="a2"  class="" ng-click="map(0)" href="stepInLohas.html"
+								style="font-family:微软雅黑; font-weight:bold;font-size: 16px;">走进洛哈思</a></div>
+					<div class="block"></div>
+					<ul>
+						<li class="subli">
+							<a class="" ng-click="map(0)" href="stepInLohas.html"
+								style="font-family:微软雅黑;">公司简介</a>
+						</li>
+						<li class="subli">
+							<a class="" ng-click="map(0)" href="stepInLohas.html?type=1"
+								style="font-family:微软雅黑;">总经理致辞</a>
+						</li>
+						<li class="subli1">
+							<a class="" ng-click="map(0)" href="stepInLohas.html?type=2"
+								style="font-family:微软雅黑;">企业文化</a>
+						</li>
+					</ul>	
+				</li>
+				<li class="mysubnav">
+					<div><a id="a3"  class="" ng-click="map(0)" href="devCenter.html"
+								style="font-family:微软雅黑; font-weight:bold;font-size: 16px;">研发中心</a></div>
+					<div class="block"></div>
+					<ul>
+						<li class="subli">
+							<a class="" ng-click="map(0)" href="javascript:void(0)"
+								style="font-family:微软雅黑;">核心技术</a>
+						</li>
+						<li class="subli1">
+							<a class="" ng-click="map(0)" href="javascript:void(0)"
+								style="font-family:微软雅黑;">专利产品</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mysubnav">
+					<div><a id="a4"  class="" ng-click="map(0)" href="company.html"
+								style="font-family:微软雅黑; font-weight:bold;font-size: 16px;">产品与服务</a></div>
+					<div class="block"></div>
+					<ul>
+						<li class="subli">
+							<a class="" ng-click="map(0)" href="company.html"
+								style="font-family:微软雅黑;">所有产品</a>
+						</li>
+						<li class="subli">
+							<a class="" ng-click="map(0)" href="http://lhscare.com/XPRO/" target="_blank"
+								style="font-family:微软雅黑;">健康云平台</a>
+						</li>
+						<li class="subli1">
+							<a class="" ng-click="map(0)" href="aftersales.html"
+								style="font-family:微软雅黑;">售后服务</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mysubnav">
+					<a id="a5" class="" ng-click="map(0)"
+						href="news.html"
+						style="font-family:微软雅黑; font-weight:bold;font-size: 16px;">新闻中心</a>
+				</li>
+				<li class="mysubnav">
+					<a id="a6" class="" ng-click="map(0)"
+						href="talents.html"
+						style="font-family:微软雅黑; font-weight:bold;font-size: 16px;">人才中心</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<a id="go_top" class="backToTop" href="#" title="返回顶部"></a>
+	
+	<style type="text/css">
+		.topMap {
+			color: #00efc4;
+		}
+	</style>
+	<script type="text/javascript">
+		var a=$(document).attr("title");
+		if(a=='首页'){
+			$("#a1").addClass("topMap")
+			$("#a2").removeClass("topMap")
+			$("#a3").removeClass("topMap")
+			$("#a4").removeClass("topMap")
+			$("#a5").removeClass("topMap")
+			$("#a6").removeClass("topMap")
+		}
+		if(a=='走进洛哈思'){
+			$("#a1").removeClass("topMap")
+			$("#a2").addClass("topMap")
+			$("#a3").removeClass("topMap")
+			$("#a4").removeClass("topMap")
+			$("#a5").removeClass("topMap")
+			$("#a6").removeClass("topMap")
+		}
+		if(a=='研发中心'){
+			$("#a1").removeClass("topMap")
+			$("#a2").removeClass("topMap")
+			$("#a3").addClass("topMap")
+			$("#a4").removeClass("topMap")
+			$("#a5").removeClass("topMap")
+			$("#a6").removeClass("topMap")
+		}
+		if(a=='产品与服务'){
+			$("#a1").removeClass("topMap")
+			$("#a2").removeClass("topMap")
+			$("#a3").removeClass("topMap")
+			$("#a4").addClass("topMap")
+			$("#a5").removeClass("topMap")
+			$("#a6").removeClass("topMap")
+		}
+		if(a=='新闻中心'){
+			$("#a1").removeClass("topMap")
+			$("#a2").removeClass("topMap")
+			$("#a3").removeClass("topMap")
+			$("#a4").removeClass("topMap")
+			$("#a5").addClass("topMap")
+			$("#a6").removeClass("topMap")
+		}
+		if(a=='人才中心'){
+			$("#a1").removeClass("topMap")
+			$("#a2").removeClass("topMap")
+			$("#a3").removeClass("topMap")
+			$("#a4").removeClass("topMap")
+			$("#a5").removeClass("topMap")
+			$("#a6").addClass("topMap")
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+a:link {
+	text-decoration: none;
+}
+/*导航样式*/
+.mynavbar {
+	z-index: 99;
+	margin-left: 33%;
+	position:absolute;
+	top:30px;
+	margin-top: 0;
+	width: 67%;
+	padding: 0 0;
+}
+.mynavbar li {
+	height: 100px;
+}
+.mynavbar a:hover {
+	color: #00efc4; 
+}
+.mynavbar a:visited {
+	text-decoration: none;
+}
+.mysubnav {
+	float: left;
+	list-style: none;
+	position: relative;
+	margin-left: 3%;
+}
+.mysubnav ul{
+	list-style: none;
+	position: absolute;
+	top: 51.5px;
+	padding: 0 0;
+	background: #fff;
+	width: 120px;
+	display: none;
+}
+.mysubnav ul .subli{
+	font-weight: normal;
+	text-align: center;
+	height: 30px;
+	width: 100px;
+	border-bottom: 1px solid black;
+	margin: 0 auto;
+}
+.mysubnav ul .subli1{
+	font-weight: normal;
+	text-align: center;
+	height: 30px;
+	width: 100px;
+	margin: 0 auto;
+}
+.mysubnav ul li a:hover {
+	color: #fff;
+}
+.mysubnav ul li a {
+	margin: 0 auto;
+	font-size: 14px;
+	line-height: 30px;
+}
+.mynavbar .block {
+	list-style: none;
+	width: 30px;
+	height: 3px;
+	background:#00efc4;
+	position: relative;
+	top: 12px;
+	display: none;
+}
+/*回到顶部样式*/
+.backToTop {
+	width: 25px;
+	height: 25px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	background-image: url(../img/goTop.png);
+	background-size: contain;
+}

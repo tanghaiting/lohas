@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.activityMapper">
+  <resultMap type="Activity" id="getActivity"> 
+        <id column="id" property="id"/>
+         <result column="name" property="name" />
+         <result column="description" property="description" />
+          <result column="expend_ecole" property="expendEcole" />
+          <result column="obtain_ecole" property="obtainEcole" />
+          <result column="created_time" property="createdTime" />
+          <result column="created_id" property="createdId" />
+    </resultMap>
+	<!-- 添加收藏记录 -->
+	 <insert id="insertActivity">
+	insert into activity
+	(name,description,expend_ecole,obtain_ecole,created_time,created_id)
+	values(#{name},#{description},#{expendEcole},#{obtainEcole},now(),#{createdId})
+	</insert>
+	
+	 <insert id="insertActivityApply">
+	insert into user_activity_apply
+	(user_id,activity_id,created_time)
+	values(#{code},#{aciitity},now())
+	</insert>
+		
+	
+		
+	<select id="selectActivitys" resultMap="getActivity">
+	select * from activity
+	</select>
+	
+	<select id="selectActivity" resultMap="getActivity">
+	select * from activity where id=#{_parameter}
+	</select>
+	<update id="updateStatus">
+	update user_activity_apply set status=#{status},dispose_id=#{disposeId} where activity_id=#{activity} and user_id=#{code}
+	</update> 
+	
+</mapper>

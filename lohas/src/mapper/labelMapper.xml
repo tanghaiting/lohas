@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.labelMapper">
+	<!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！ -->
+	<!-- <resultMap id="UserOprateResourceMap" type="com.risen.capricornus.bean.UserOprateResource"> -->
+	<!-- <id column="id" property="userId" /> -->
+	<!-- <result column="res_number" property="resNumber"/> -->
+	<!-- <result column="created_time" property="createTime"/> -->
+	<!-- <result column="type" property="type"/> -->
+	<!-- </resultMap> -->
+	<!-- 资源 -->
+	<resultMap id="LabelMap" type="com.risen.cancer.bean.Label">
+		<result column="id" property="id" />
+		<result column="code" property="code" />
+		<result column="name" property="name" />
+		<result column="parent_code" property="parentCode" />
+		<result column="type" property="type" />
+		<result column="user_id" property="userId" />
+	</resultMap>
+		<!-- 添加收藏记录 -->
+	<resultMap type="MhLabel" id="getMajorLabels">
+	<id column="id" property="id" />
+	<result column="name" property="name" />
+	<result column="level" property="level" />
+	<result column="code" property="code" />
+	<result column="parent_code" property="parentCode" />
+	<result column="profession" property="profession" />
+	<result column="field" property="field" />
+	</resultMap>
+	<resultMap type="MhLabel" id="getTypeLabels">
+	<id column="id" property="id" />
+	<result column="res_property_cod" property="code" />
+	<result column="res_property_name" property="name" />
+	<result column="level" property="level" />
+	<result column="parent_code" property="parentCode" />
+	<result column="field" property="field" />
+	</resultMap>
+	
+	<!-- @电教馆数据库语句 -->
+	<select id="getMajorLabels" resultMap="getMajorLabels">
+		select id,name,level,code,parent_code,profession,field from t_mh_major
+	</select>
+	<select id="getPropertyLabels" resultMap="getTypeLabels">
+	    select id,res_property_cod,res_property_name,level,parent_code,field from t_res_property
+	</select>
+	<select id="getCatalogLabels" resultMap="getTypeLabels">
+	    select id,name,code,parent_code,field,level from t_mh_catalog
+	</select>
+	<!-- 电教馆数据库语句 -->
+	
+	<!-- @北交大数据库语句 -->
+	
+	
+	<!-- 查询所有学科 -->
+	<select id="getSubjects" resultMap="LabelMap">
+		select id,name,code from
+		t_subject;
+	</select>
+
+	<!-- 查询所有专业 -->
+	<select id="getMajors" resultMap="LabelMap">
+		select id,name,parent_code,code from
+		t_major;
+	</select>
+
+	<!-- 查询所有专业方向 -->
+	<select id="getMajorFields" resultMap="LabelMap">
+		select id,name,parent_code,code
+		from
+		t_major_field;
+	</select>
+
+	<!-- 查询所有自定义标签 -->
+	<select id="getKeywords" resultMap="LabelMap">
+		select id,name,type,user_id,code from
+		t_keyword;
+	</select>
+	
+	<!-- 查询所有学科 -->
+	<select id="getPushSubjects" resultMap="LabelMap">
+		select id,name,code,status from
+		t_subject where 
+		 <if test="_parameter!=3">
+		 status!=3
+		 </if>
+		 <if test="_parameter==3">
+		 status=#{_parameter}
+		 </if> 
+	</select>
+
+	<!-- 查询所有专业 -->
+	<select id="getPushMajors" resultMap="LabelMap">
+		select id,name,parent_code,code,status from
+		t_major where 
+		 <if test="_parameter!=3">
+		 status!=3
+		 </if>
+		 <if test="_parameter==3">
+		 status=#{_parameter}
+		 </if> 
+	</select>
+
+	<!-- 查询所有专业方向 -->
+	<select id="getPushMajorFields" resultMap="LabelMap">
+		select id,name,parent_code,code,status
+		from
+		t_major_field where 
+		 <if test="_parameter!=3">
+		 status!=3
+		 </if>
+		 <if test="_parameter==3">
+		 status=#{_parameter}
+		 </if> 
+	</select>
+
+	<!-- 查询所有自定义标签 -->
+	<select id="getPushKeywords" resultMap="LabelMap">
+		select id,name,type,user_id,code,status from
+		t_keyword where
+		 <if test="_parameter!=3">
+		 status!=3
+		 </if>
+		 <if test="_parameter==3">
+		 status=#{_parameter}
+		 </if> 
+	</select>
+	
+	<!-- 添加关键字 -->
+	<insert id="addKeyword">
+		insert into t_keyword (name,code,user_id,type) values(#{name},#{code},#{userId},"1")
+	</insert>
+	
+	
+	<select id="getLabelResourceIds" resultType="java.util.List">
+	  select res_code from t_label_res where label_code=#{labelCode}
+	</select>
+	
+	<insert id="insertKeyWord">
+	     insert into t_keyword(name,type,user_id)values(#{name},#{type},#{userId})
+	</insert>
+	
+	<insert id="insertMajorField">
+	     insert into t_major_field(name,type,user_id)values(#{name},#{type},#{userId})
+	</insert>
+	
+	<insert id="insertLabelResrouce">
+	     insert into t_label_res(label_code,res_code)values(#{map.labelCode},#{map.resCode})
+	</insert>
+	
+	<!-- 修改关键字 -->
+	<update id="udpateKeyWord">
+	    update t_keyword set name=#{name} where id=#{id}
+	</update>
+	
+	<!-- 修改专业方向 -->
+	<update id="udpateMajorField">
+	   update t_major_field set name=#{name} where id=#{id}
+	</update>
+	
+	<!-- 删除关键字 -->
+	<delete id="deleteKeyWord">
+	    delete from t_keyword where id=#{labelID}
+	</delete>
+	
+	<!-- 删除专业方向 -->
+	<delete id="deleteMajorField">
+	   delete from t_major_field where id=#{labelID}
+	</delete>
+	
+	<!-- 删除标签关联信息 -->
+	<delete id="deleteLabelResrouce">
+	  delete from t_label_res where label_code={labelCode}
+	</delete>
+	<!-- 电教馆数据库语句 -->
+</mapper>

@@ -1,0 +1,77 @@
+
+<html ng-app="profileApp">
+<head >
+<meta charset="utf-8" />
+<title>产品与服务</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- basic styles -->
+	<!-- 导航部分样式 -->
+	<link rel="stylesheet" href="static/css/top.css">
+	<!-- 售后服务样式 -->
+	<link rel="stylesheet" href="static/css/aftersale.css">
+	<script src="lib/angular.js"></script>  
+	<script src="lib/angular-cookies.min.js"></script>  
+	<script src="script/imgPath.js"></script>
+	<script src="script/const.js"></script> 
+	<script src="lib/jquery.min.js"></script>  
+	<script src="lib/bootstrap.min.js"></script>  
+	<link rel="stylesheet"
+		href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="static/js/jquery.carouFredSel-6.0.4-packed.js"
+		type="text/javascript"></script>
+	<script src="static/js/profile.js"type="text/javascript"></script>
+
+</head>
+<body ng-controller="profile">
+		<div id="moon"></div>
+<div>
+	<!-- 公司动态top图片 -->
+	<div>
+		<img alt="" src="static/img/bg.png" style=" height:400px;width: 100%;">
+	</div>
+	<div class="aftersales">
+		<div class="neirong">
+			<h1>AFTERSALE SERVICE<br>售 后 服 务</h1>
+			<div>
+				<div class="tupian">
+					常见问题
+				</div>
+			</div>
+			<p class="question">1、手表如何开机？</p>
+			<p class="answer">右侧中间按键长按十秒钟</p>
+			<p class="question">2、手表如何使用？</p>
+			<p class="answer">（1）短按（两秒内）按键，控制屏幕量灭</p>
+			<p class="answer">（2）长按（三到十秒）为一键呼叫功能</p>
+			<p class="question">3、手表怎么调节时间？</p>
+			<p class="answer">智能手表有自动对时功能，可自动进行时间校准，无需人工调节</p>
+			<p class="question">4、手表可以防水吗？</p>
+			<p class="answer">智能手表防水等级为：生活防水</p>
+			<p class="question">5、哪些人不适宜佩戴？</p>
+			<p class="answer">婴幼儿、儿童、正在服用光敏药物的病患者或其它疾病，使用佩戴前，请咨询医生</p>
+			<p class="question">6、为什么抬手测量心率时，手表显示心率数值一直在变动？</p>
+			<p class="answer">手环测量心率，会受外界干扰出现波动，而且人体心率也是一个波动的动态值。手环显示心率值后，心率值会逐渐稳定下来，小范围波动。</p>
+			<p class="question">7、如何设置及取消连续监测功能？</p>
+			<p class="answer">按键点亮手表界面后，触屏点击选择/取消连续监测功能。</p>
+			<p class="question">8、手表都有哪些功能？</p>
+			<p class="answer">（1）测量血压、血氧、心率、步数、步行距离、卡路里</p>
+			<p class="answer">（2）接打电话（支持联通、移动电话卡）、一键呼叫</p>
+		</div>
+	</div>
+</div>
+		
+
+<div id="moom" style="background-color: #2dd568;"></div>
+<script>
+$( "#moom" ).load( "footer.html", function( response, status, xhr ) {
+  $('#moom').html(response);
+});
+</script>
+<script>
+$( "#moon" ).load( "top.html", function( response, status, xhr ) {
+  $('#moon').html(response);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+.newsCenter #newsDetail h3 {
+	text-align: center;
+}
+.newsCenter #newsDetail {
+	width: 60%;
+	height: 1650px;
+	margin: 0 auto;
+	background: #ffffff;
+	margin-top: -20px;
+	padding: 0 20px;
+	padding-top: 30px;
+}
+.newsCenter {
+	height: 1680px;
+	background-color: #eeeeee;
+}
+.newsCenter div h1 {
+	text-align: center;
+	font-size: 30px;
+	line-height: 50px;
+	margin: 0 auto;
+}
+/*新闻内容样式 end*/
+.footer_2 {
+	background-color: #2dd568;
+	height: 60px;
+}
+
+.footer_2d {
+	width: 910px;
+}
+
+.allFooter {
+	margin-left: 15%;
+	width: 910px;
+}
+
+.footer {
+	background-color: #2dd568;
+	height: 280px;
+}
+
+.footer a {
+	font-size: 40px;
+	color: #ffffff;
+}
+
+.footer_1 {
+	float: left;
+	margin-top: 75px;
+}
+
+.footer li {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	list-style-type: none;
+	font-size: 20px;
+	color: #ffffff;
+}
+
+html,body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	min-height: 350px;
+}
+
+body * {
+	font-family: "Microsoft Yahei","Arial"
+	font-size: 14px;
+	color: #333;
+	line-height: 22px;
+}
+
+#wrapper {
+	width: 735px;
+	height: 220px;
+	left: 50%;
+	top: 50%;
+}
+
+#carousel {
+	width: 735px;
+	position: vrelative;
+}
+
+#carousel ul {
+	list-style: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+#carousel li {
+	background: transparent url(static/images/carousel_polaroid.png)
+		no-repeat 0 0;
+	font-size: 40px;
+	color: #999;
+	text-align: center;
+	display: block;
+	width: 232px;
+	height: 178px;
+	padding: 0;
+	margin: 6px;
+	float: left;
+	position: relative;
+}
+
+#carousel li img {
+	width: 201px;
+	height: 127px;
+	margin-top: 14px;
+}
+
+#carousel li span {
+	background: transparent url(static/images/carousel_shine.png) no-repeat
+		0 0;
+	text-indent: -999px;
+	display: block;
+	overflow: hidden;
+	width: 201px;
+	height: 127px;
+	position: absolute;
+	z-index: 2;
+	top: 14px;
+	left: 16px;
+}
+
+.clearfix {
+	width: 700px;
+	float: none;
+	clear: both;
+}
+
+#carousel .prev,#carousel .next {
+	background: transparent url(static/images/carousel_control.png)
+		no-repeat 0 0;
+	text-indent: -999px;
+	display: block;
+	overflow: hidden;
+	width: 15px;
+	height: 21px;
+	margin-left: 10px;
+	top: 70px;
+	margin-left: -750px;
+	margin-top: -120px;
+}
+
+#carousel .prev {
+	background-position: 0 0;
+	left: -30px;
+}
+
+#carousel .prev:hover {
+	left: -31px;
+}
+
+#carousel .next {
+	background-position: -18px 0;
+	right: -20px;
+	margin-top: -25px;
+	margin-left: 740px;
+}
+
+#carousel .next:hover {
+	right: -21px;
+}
+
+#carousel .pager {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#carousel .pager a {
+	background: transparent url(static/images/carousel_control.png)
+		no-repeat -2px -32px;
+	text-decoration: none;
+	text-indent: -999px;
+	display: inline-block;
+	overflow: hidden;
+	width: 8px;
+	height: 8px;
+	margin: 0 5px 0 0;
+}
+
+#carousel .pager a.selected {
+	background: transparent url(static/images/carousel_control.png)
+		no-repeat -12px -32px;
+	text-decoration: underline;
+	margin-top: 100px;
+}
+
+#source {
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+}
+
+#source,#source a {
+	font-size: 12px;
+	color: #999;
+}
+
+#donate-spacer {
+	height: 100%;
+}
+
+#donate {
+	border-top: 1px solid #999;
+	width: 750px;
+	padding: 50px 75px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#donate p,#donate form {
+	margin: 0;
+	float: left;
+}
+
+#donate p {
+	width: 650px;
+}
+
+#donate form {
+	width: 100px;
+}
+

@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html ng-app="pathApp" ng-controller="pathContraller">
+<head >
+<meta charset="utf-8" />
+<title>健康监护平台</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- basic styles -->
+	<!-- <script src="script/angular.min.js"></script> -->
+	<link rel="stylesheet" href="static/css/wzxIndex.css">
+	<!-- 导航部分样式 -->
+	<link rel="stylesheet" href="static/css/top.css">
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="lib/angular.js"></script>  
+	<script src="lib/angular-cookies.min.js"></script>  
+	<script src="script/imgPath.js"></script>
+	<script src="script/const.js"></script> 
+	<script src="static/js/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+
+</head>
+<body >
+<div id="moon"></div>
+
+<div>
+	<div id="myCarousel" class="carousel slide">
+		<!-- 轮播（Carousel）指标 -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+			<li data-target="#myCarousel" data-slide-to="4"></li>
+		</ol>   
+		<!-- 轮播（Carousel）项目 -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="{{imgPath1}}" alt="First slide" width="100%">
+			</div>
+			<div class="item "  ng-repeat="path in path" >
+				<img src="{{path}}" alt="Second slide" width="100%">
+			</div>
+		</div>
+		<!-- 轮播（Carousel）导航 -->
+		<a class="carousel-control left" href="#myCarousel" 
+		   data-slide="prev"></a>
+		<a class="carousel-control right" href="#myCarousel" 
+		   data-slide="next"></a>
+	</div>
+	<!-- 
+	 <div id="dvmq" style="height:20px;overflow:hidden;background-color:#539ed3;" >
+	<p style="margin-top:0px;color:#ffffff;font-weight:bold;" ng-repeat="ando in ando"><span style="width:690px;margin:0 auto;display:block;color: #fff;"><span class="glyphicon glyphicon-volume-up" ></span> {{ando.content}}</span></p>
+	</div>
+    -->
+	  
+<!-- 	<script> -->
+<!--     function scroll_news(){ -->
+<!-- 	    $(function(){ -->
+<!-- 		    $('#dvmq p').eq(0).fadeOut('slow',function(){ -->
+<!-- 			    $(this).clone().appendTo($(this).parent()).fadeIn('slow'); -->
+<!-- 			    $(this).remove(); -->
+<!-- 	    	}); -->
+<!-- 	    }); -->
+<!--     } -->
+<!--     setInterval('scroll_news()',3000); -->
+<!--     </script> -->
+	<!-- 服務範圍 -->
+	<div class="serviceArea">
+		<div class="service" style=" height:400px;">
+			<div style=" float:left;margin-left:40px;">
+			<a  href="stepInLohas.html"><img img id="im1" src="static/img/intro.png" onmouseout="huanyuan1();" onmouseover="jiaohuan1();" width="200px"  ></a>
+			</div>
+			<div style=" float:left;margin-left:70px; ">
+			<a href="company.html"><img img id="im2" src="static/img/proservice.png" onmouseout="huanyuan2();" onmouseover="jiaohuan2();"  width="200px" ></a>
+			</div>
+			<div style=" float:left;margin-left:70px;">
+			<a href="javascript:scrollToEnd();"><img img id="im3" src="static/img/conme.png" onmouseout="huanyuan3();" onmouseover="jiaohuan3();"  width="200px" ></a>
+			</div>
+		</div>
+	</div>
+	<!-- 企业精神 企业宗旨 企业使命 -->
+	<div>
+		<img alt="" src="static/img/qynr.jpg" width="100%" height="100%">
+	</div>
+	<div id="moom" style="background-color: #eeeeee;"></div>
+</div>
+<script>
+	$( "#moon" ).load( "top.html", function( response, status, xhr ) {
+	  $('#moon').html(response);
+	});
+	$( "#moom" ).load( "footer.html", function( response, status, xhr ) {
+	    $('#moom').html(response);
+	});
+</script>
+<script type="text/javascript">
+	// 初始化轮播
+			$("#myCarousel").carousel('cycle');
+		
+  function jiaohuan1(){
+   document.getElementById('im1').src="static/img/intro1.png";
+   }
+   function huanyuan1(){
+    document.getElementById('im1').src="static/img/intro.png";
+    }
+  function jiaohuan2(){
+   document.getElementById('im2').src="static/img/proservice1.png";
+   }
+   function huanyuan2(){
+    document.getElementById('im2').src="static/img/proservice.png";
+    }
+  function jiaohuan3(){
+   document.getElementById('im3').src="static/img/conme1.png";
+   }
+   function huanyuan3(){
+    document.getElementById('im3').src="static/img/conme.png";
+    }
+  </script>
+
+		<style type="text/css">
+		A:link{text-decoration:none;}
+		.footer_2{
+				background-color:#2dd568;
+				height: 60px;
+		}
+		.allFooter{
+				margin-left: 15%;
+				width: 910px;
+		}
+		.footer {
+				background-color:#2dd568; 
+				height: 280px;
+				}		
+		.footer a {
+				font-size: 40px;
+				color: #ffffff;
+		}		
+		.footer_1{
+				float:left;
+				margin-top:75px;
+				
+				}
+		.footer li {
+				margin-top:25px;
+				margin-bottom:25px;
+				list-style-type:none;
+				font-size: 20px;
+				color: #ffffff;
+				}
+			html, body {
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				min-height: 350px;
+			}
+			body * {
+				font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+				font-size: 14px;
+				color: #333;
+				line-height: 22px;
+			}
+
+			#wrapper {
+				width: 735px;
+				height: 220px;
+				left: 50%;
+				top: 50%;
+			}
+
+			#carousel {
+				width: 735px;
+				position:vrelative;
+			}
+			#carousel ul {
+				list-style: none;
+				display: block;
+				margin: 0;
+				padding: 0;
+			}
+			#carousel li {
+				background: transparent url(static/images/carousel_polaroid.png) no-repeat 0 0;
+				font-size: 40px;
+				color: #999;
+				text-align: center;
+				display: block;
+				width: 232px;
+				height: 178px;
+				padding: 0;
+				margin: 6px;
+				float: left;
+				position: relative;
+			}
+
+			#carousel li img {
+				width: 201px;
+				height: 127px;
+				margin-top: 14px;
+			}
+			
+			#carousel li span {
+				background: transparent url(static/images/carousel_shine.png) no-repeat 0 0;
+				text-indent: -999px;
+				display: block;
+				overflow: hidden;
+				width: 201px;
+				height: 127px;
+				position: absolute;
+				z-index: 2;
+				top: 14px;
+				left: 16px;
+			}			
+
+			.clearfix {
+				width:700px;
+				float: none;
+				clear: both;
+			}
+			#carousel .prev, #carousel .next {
+				background: transparent url(static/images/carousel_control.png) no-repeat 0 0;
+				text-indent: -999px;
+				display: block;
+				overflow: hidden;
+				width: 15px;
+				height: 21px;
+				margin-left: 10px;
+				top: 70px;		
+				margin-left: -750px;
+   				margin-top: -120px;		
+			}
+			#carousel .prev {
+				background-position: 0 0;
+				left: -30px;
+			}
+			#carousel .prev:hover {
+				left: -31px;
+			}			
+			#carousel .next {
+				background-position: -18px 0;
+				right: -20px;
+				margin-top: -25px;
+   				margin-left: 740px;
+			}
+			#carousel .next:hover {
+				right: -21px;
+			}				
+			#carousel .pager {
+				text-align: center;
+				margin: 0 auto;
+			}
+			#carousel .pager a {
+				background: transparent url(static/images/carousel_control.png) no-repeat -2px -32px;
+				text-decoration: none;
+				text-indent: -999px;
+				display: inline-block;
+				overflow: hidden;
+				width: 8px;
+				height: 8px;
+				margin: 0 5px 0 0;
+			}
+			#carousel .pager a.selected {
+				background: transparent url(static/images/carousel_control.png) no-repeat -12px -32px;
+				text-decoration: underline;		
+				margin-top:100px; 		
+			}
+			
+			#source {
+				text-align: center;
+				width: 100%;
+				position: absolute;
+				bottom: 10px;
+				left: 0;
+			}
+			#source, #source a {
+				font-size: 12px;
+				color: #999;
+			}
+			
+			#donate-spacer {
+				height: 100%;
+			}
+			#donate {
+				border-top: 1px solid #999;
+				width: 750px;
+				padding: 50px 75px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			#donate p, #donate form {
+				margin: 0;
+				float: left;
+			}
+			#donate p {
+				width: 650px;
+			}
+			#donate form {
+				width: 100px;
+			}
+		</style>
+<script type="text/javascript">
+	app.directive('repeatFinish',function(){
+		  return {
+		    link: function(scope,element,attr){
+		      if(scope.$last == true){
+		    	  $(function() {
+						$('#carousel ul').carouFredSel({
+							prev: '#prev',
+							next: '#next',
+							pagination: "#pager",
+							scroll: 1000
+						});
+			
+					});
+		      }
+		    }
+		  }
+	})
+</script>
+<script type="text/javascript">
+	//滚动到底部
+	function scrollToEnd(){
+            var h = $(document).height()-$(window).height();
+            $('body,html').animate({scrollTop:h},100);
+	}
+</script>
+		
+</body>
+</html>
+

@@ -1,0 +1,390 @@
+#hardware {
+	width: 60%;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 1px;
+}
+#hardware #hwContent {
+	display: block;
+}
+#hardware .subTitle {
+	height: 50px;
+	width: 30%;
+	color: #ffffff;
+	background: #00efc4;
+	font-size: 28px;
+	line-height: 50px;
+	text-align: center;
+	margin-top: 60px;
+	min-width: 210px;
+}
+#hardware .rowDiv {
+	height: 300px;
+	border-top: 5px solid #00efc4;
+	padding: 40px 0;
+}
+#hardware .rowDiv .pDiv {
+	width: 30%;
+	float: left;
+	cursor: pointer;
+	height: 100%;
+}
+#hardware .rowDiv .pDiv img {
+	height: 100%;
+}
+#hardware .rowDiv .pDiv1 {
+	margin: 0 5%;
+}
+#psContent {
+	width: 100%;
+	height: 2700px;
+	background: #eeeeee;
+}
+.psNav {
+	margin: 0 auto;
+	width: 80%;
+	text-align: center;
+}
+.psNav #imgDiv {
+	background-image: url(../img/);
+}
+.psNav img {
+	margin:50px 5%;
+	cursor: pointer;
+	width: 12%;
+}
+#hardware {
+	width: 60%;
+}
+#hardware #hwDetail  {
+	width:  100%;
+	height: 400px;
+	cursor: pointer;
+}
+#hardware #hwDetail  h3 {
+	font-size: 20px;
+	width: 50%;
+	margin-top: 50px;
+}
+
+#hardware #hwDetail #watchRow .rowInfo {
+	/*background-image: url(../img/productDetail/1.png);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+
+#hardware #hwDetail #monitor1 .rowInfo {
+	/*background-image: url(../img/productDetail/2.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+#hardware #hwDetail #monitor2 .rowInfo {
+	/*background-image: url(../img/productDetail/3.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+#hardware #hwDetail #weightscale .rowInfo {
+	/*background-image: url(../img/productDetail/4.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+#hardware #hwDetail #ecg .rowInfo {
+	/*background-image: url(../img/productDetail/5.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+#hardware #hwDetail #glu .rowInfo {
+	/*background-image: url(../img/productDetail/6.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+#hardware #hwDetail #mpc1 .rowInfo {
+	/*background-image: url(../img/productDetail/7.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+#hardware #hwDetail #mpc2 .rowInfo {
+	/*background-image: url(../img/productDetail/8.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+#hardware #hwDetail #env1 .rowInfo {
+	/*background-image: url(../img/productDetail/9.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+#hardware #hwDetail #env2 .rowInfo {
+	/*background-image: url(../img/productDetail/10.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+#hardware #hwDetail #env3 .rowInfo {
+	/*background-image: url(../img/productDetail/11.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+#hardware #hwDetail #cookhouse1 .rowInfo {
+	/*background-image: url(../img/productDetail/12.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+#hardware #hwDetail #cookhouse2 .rowInfo {
+	/*background-image: url(../img/productDetail/13.jpg);*/
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 45%;
+}
+
+#hardware #hwDetail  .rowInfo h4 {
+	width: 50%;
+	font-size: 16px;
+	line-height: 32px;
+	margin: 0 0;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+#hardware #hwDetail .rowInfo p {
+	width: 50%;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0 0;
+	border-top: 1.5px solid #000;
+}
+#watchRow, #monitor1, #monitor2, #weightscale, #ecg, #glu, #mpc1, #mpc2, #env1, #env2, #env3, #cookhouse1, #cookhouse2 {
+	display: none;
+}
+#hardware #hwDetail .rowInfo ul {
+	width: 50%;
+	padding-left: 16px;
+}
+#hardware #hwDetail .rowInfo ul li {
+	margin-right: 16px;
+	font-size: 16px;
+}
+/* 以下为原有样式 */
+#cc
+{
+display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.footer_2 {
+	background-color: #2dd568;
+	height: 60px;
+}
+
+.footer_2d {
+	width: 910px;
+}
+
+.allFooter {
+	margin-left: 15%;
+	width: 910px;
+}
+
+.footer {
+	background-color: #2dd568;
+	height: 280px;
+}
+
+.footer a {
+	font-size: 40px;
+	color: #ffffff;
+}
+
+.footer_1 {
+	float: left;
+	margin-top: 75px;
+}
+
+.footer li {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	list-style-type: none;
+	font-size: 20px;
+	color: #ffffff;
+}
+
+html,body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	min-height: 350px;
+}
+
+body * {
+	font-family: "Microsoft Yahei","Arial";
+	font-size: 14px;
+	color: #333;
+	line-height: 22px;
+}
+
+#wrapper {
+	width: 735px;
+	height: 220px;
+	left: 50%;
+	top: 50%;
+}
+
+#carousel {
+	width: 735px;
+	position: vrelative;
+}
+
+#carousel ul {
+	list-style: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+#carousel li {
+	background: transparent url(static/images/carousel_polaroid.png)
+		no-repeat 0 0;
+	font-size: 40px;
+	color: #999;
+	text-align: center;
+	display: block;
+	width: 232px;
+	height: 178px;
+	padding: 0;
+	margin: 6px;
+	float: left;
+	position: relative;
+}
+
+#carousel li img {
+	width: 201px;
+	height: 127px;
+	margin-top: 14px;
+}
+
+#carousel li span {
+	background: transparent url(static/images/carousel_shine.png) no-repeat
+		0 0;
+	text-indent: -999px;
+	display: block;
+	overflow: hidden;
+	width: 201px;
+	height: 127px;
+	position: absolute;
+	z-index: 2;
+	top: 14px;
+	left: 16px;
+}
+
+.clearfix {
+	width: 700px;
+	float: none;
+	clear: both;
+}
+
+#carousel .prev,#carousel .next {
+	background: transparent url(static/images/carousel_control.png)
+		no-repeat 0 0;
+	text-indent: -999px;
+	display: block;
+	overflow: hidden;
+	width: 15px;
+	height: 21px;
+	margin-left: 10px;
+	top: 70px;
+	margin-left: -750px;
+	margin-top: -120px;
+}
+
+#carousel .prev {
+	background-position: 0 0;
+	left: -30px;
+}
+
+#carousel .prev:hover {
+	left: -31px;
+}
+
+#carousel .next {
+	background-position: -18px 0;
+	right: -20px;
+	margin-top: -25px;
+	margin-left: 740px;
+}
+
+#carousel .next:hover {
+	right: -21px;
+}
+
+#carousel .pager {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#carousel .pager a {
+	background: transparent url(static/images/carousel_control.png)
+		no-repeat -2px -32px;
+	text-decoration: none;
+	text-indent: -999px;
+	display: inline-block;
+	overflow: hidden;
+	width: 8px;
+	height: 8px;
+	margin: 0 5px 0 0;
+}
+
+#carousel .pager a.selected {
+	background: transparent url(static/images/carousel_control.png)
+		no-repeat -12px -32px;
+	text-decoration: underline;
+	margin-top: 100px;
+}
+
+#source {
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+}
+
+#source,#source a {
+	font-size: 12px;
+	color: #999;
+}
+
+#donate-spacer {
+	height: 100%;
+}
+
+#donate {
+	border-top: 1px solid #999;
+	width: 750px;
+	padding: 50px 75px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#donate p,#donate form {
+	margin: 0;
+	float: left;
+}
+
+#donate p {
+	width: 650px;
+}
+
+#donate form {
+	width: 100px;
+}
+

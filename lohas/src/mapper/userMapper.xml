@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.userMapper">
+<resultMap type="User" id="getUser"> 
+        <id column="id" property="id"/>
+         <result column="name" property="name" />
+         <result column="gender" property="gender" />
+          <result column="email" property="email" />
+          <result column="address" property="address" />    
+          <result column="picture" property="picture" />  
+          <result column="user_type_id" property="userTypeId" />  
+          <result column="status" property="status" />  
+          <result column="ecole" property="ecole" />  
+          <result column="code" property="code" />  
+          <result column="activity_ecole" property="activityEcole" />  
+    </resultMap> 
+    
+ <resultMap type="java.util.HashMap" id="getUserApply"> 
+ 
+        <id column="id" property="id"/>
+         <result column="name" property="name" />
+         <result column="user_type_name" property="userTypeName" />
+         <result column="created_time" property="createdTime" />
+         <result column="status" property="status" />
+         <result column="code" property="userCode" />
+        </resultMap> 
+<!-- <insert id="insertEcole">
+	insert into ecole_message
+	(ecole,type,created_time,user_id)
+	values(${dot},#{type},now(),#{userId})
+	</insert> -->
+	<!--  <insert id="insertActivity">
+	insert into activity
+	(name,description,expend_ecole,obtain_ecole,created_time,created_id)
+	values(#{name},#{description},#{expendEcole},#{obtainEcole},now(),#{createdId})
+	</insert>
+	
+	 <insert id="insertActivityApply">
+	insert into user_activity_apply
+	(user_id,activity_id,created_time)
+	values(#{code},#{aciitity},now())
+	</insert>
+		
+	
+		
+	<select id="selectActivitys" resultMap="getActivity">
+	select * from activity
+	</select>
+	-->
+	
+	<select id="selectUsers" resultMap="getUser">
+	select * from user where user_type_id!=1
+	</select>
+	<select id="selectActivityUsers" resultType="java.util.HashMap">
+	select t1.`name`,t2.id,t2.`status`,t1.code from user t1,user_activity_apply t2,activity t3 where t1.`code`=t2.user_id and t2.activity_id=t3.id and t3.id=#{activityId}
+	</select>
+	<select id="selectUser" resultMap="getUser">
+	select * from user where code=#{code}
+	</select>
+	
+	<select id="selectUserApplys" resultMap="getUserApply">
+	select t2.id,t1.code userCode,t1.`name`,t3.`name` user_type_name,t2.created_time,t2.status from user t1,apply t2,user_type t3 where t1.`code`=t2.user_id and t3.id=t1.user_type_id
+	</select>
+	
+	<update id="updateUser">
+	update user set name=#{name},gender=#{gender},email=#{email},picture=#{picture},phone=#{phone},address=#{address} where code=#{code}
+	</update>
+	<update id="updateUserStatus">
+	update user set status=#{status} where code=#{code}
+	</update>
+	<update id="updateUserApplyStatus">
+	update apply set status=#{status},dispose_id=#{code} where id=#{id}
+    </update>
+    <update id="adminUserDots">
+	update user set ecole=ecole+${dot} where code=#{userId}    </update>
+</mapper>

@@ -1,0 +1,572 @@
+<html ng-app="companyApp">
+<head>
+<meta charset="utf-8" />
+<title>产品与服务</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- basic styles -->
+	<!-- 导航部分样式 -->
+	<link rel="stylesheet" href="static/css/top.css">
+	<!-- 本页样式 -->
+	<link rel="stylesheet" href="static/css/company.css">
+	<script src="lib/angular.js"></script>  
+	<script src="lib/angular-cookies.min.js"></script>  
+	<script src="script/company.js"></script>
+	<script src="script/const.js"></script> 
+	<script src="lib/jquery.min.js"></script>  
+	<script src="lib/bootstrap.min.js"></script>  
+	<script src="static/js/jquery.carouFredSel-6.0.4-packed.js"
+		type="text/javascript"></script>
+<!-- 	<script src="static/js/company.js" type="text/javascript"></script> -->
+</head>
+<body ng-controller="companyController">
+	<div id="moon"></div>
+	<div style="overflow:hidden">
+		<!-- 公司动态top图片 -->
+		<div>
+			<img alt="" src="static/img/bg.png" style=" height:400px;width: 100%">
+		</div>
+		
+		<!-- 菜单 -->
+		<div class="psNav">
+			<img src="static/img/znyj.png" id="img3" onmouseover="jiaohuan3();" onmouseout="huanyuan3();" onclick="zhyjShow();">
+			<img src="static/img/fwtx1.png" id="img1" onmouseover="jiaohuan1();" onmouseout="huanyuan1();" onclick="fwtxShow();">
+			<img src="static/img/ypt1.png" id="img2" onmouseover="jiaohuan2();" onmouseout="huanyuan2();" onclick="yptShow();">
+		</div>
+		<div id="psContent">
+			<img id="ssImg" alt="" src="static/img/servSystem.jpg" width="100%" height="100%" style="display:none">
+			<img id="hcImg" alt="" src="static/img/healthCloud.jpg" width="100%" height="100%" style="display:none">
+			<!-- 智能硬件 -->
+			<div id="hardware">
+				<!-- 产品图片 -->
+				<div id="hwContent">
+					<div class="subTitle">智能可穿戴设备</div>
+					<div class="rowDiv">
+						<div class="pDiv">
+							<img width="100%"  ng-src="{{productImgs[0].path}}" title="{{productImgs[0].title}}" onclick="productDetail(1);">
+						</div>
+						<div class="pDiv pDiv1">
+							<img width="100%"  ng-src="{{productImgs[1].path}}" title="{{productImgs[1].title}}" onclick="productDetail(2);">
+						</div>
+						<div class="pDiv">
+							<img width="100%"  ng-src="{{productImgs[2].path}}" title="{{productImgs[2].title}}" onclick="productDetail(3);" >
+						</div>
+					</div>
+					<div class="subTitle">智能无线设备</div>
+					<div class="rowDiv">
+						<div class="pDiv ">
+							<img width="100%"  ng-src="{{productImgs[3].path}}" title="{{productImgs[3].title}}" onclick="productDetail(4);">
+						</div>
+						<div class="pDiv pDiv1">
+							<img width="100%"  ng-src="{{productImgs[4].path}}" title="{{productImgs[4].title}}" onclick="productDetail(5);">
+						</div>
+						<div class="pDiv">
+							<img width="100%"  ng-src="{{productImgs[5].path}}" title="{{productImgs[5].title}}" onclick="productDetail(6);">
+						</div>
+					</div>
+					<div class="subTitle">定位呼叫设备</div>
+					<div class="rowDiv">
+						<div class="pDiv">
+							<img width="100%"  ng-src="{{productImgs[6].path}}" title="{{productImgs[6].title}}" onclick="productDetail(7);">
+						</div>
+						<div class="pDiv pDiv1">
+							<img width="100%"  ng-src="{{productImgs[7].path}}" title="{{productImgs[7].title}}" onclick="productDetail(8);">
+						</div>
+					</div>
+					<div class="subTitle">无线环境传感器</div>
+					<div class="rowDiv">
+						<div class="pDiv">
+							<img width="100%"  ng-src="{{productImgs[8].path}}" title="{{productImgs[8].title}}" onclick="productDetail(9);">
+						</div>
+						<div class="pDiv pDiv1">
+							<img width="100%"  ng-src="{{productImgs[9].path}}" title="{{productImgs[9].title}}" onclick="productDetail(10);">
+						</div>
+						<div class="pDiv">
+							<img width="100%"  ng-src="{{productImgs[10].path}}" title="{{productImgs[10].title}}" onclick="productDetail(11);">
+						</div>
+					</div>
+					<div class="subTitle">无线厨房传感器</div>
+					<div class="rowDiv">
+						<div class="pDiv">
+							<img width="100%"  ng-src="{{productImgs[11].path}}" title="{{productImgs[11].title}}" onclick="productDetail(12);">
+						</div>
+						<div class="pDiv pDiv1">
+							<img width="100%"  ng-src="{{productImgs[12].path}}" title="{{productImgs[12].title}}" onclick="productDetail(13);">
+						</div>
+					</div>
+				</div>
+				<!-- 详细介绍 -->
+				<div id="hwDetail">
+					<div id="watchRow" onclick="hideDetail(1);" title="点击可返回">
+						<h3>智能手表</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[0].detail_path}})">
+							<h4>功能作用</h4>
+							<p>可连续检测血压、心率、心电、体温、运动、睡眠、情绪/压力等身体状况，同时可进行紧急呼叫、无线定位、无线通讯等。</p>
+							<h4>健康服务</h4>
+							<p>采用运动矫正及个体特征校正技术，根据个人的生理特征进行系统调整，得出更准确的监测数据，检测到的信息可以实时传送到云平台及亲属的手机。</p>
+							<h4>技术亮点</h4>
+							<p>
+								<ul>
+									<li>搭载公司研制的专用生物处理器W1601 Bio-Processor；</li>
+									<li>WIFI、BLE、LTE及3G等多种连网及无线定位方式（WIFI、BLE及GPS/北斗）;</li>
+									<li>采用容量不低于400MA的可充电锂电池可进行24小时连续监测。</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+					<div id="monitor1" onclick="hideDetail(2);" title="点击可返回">
+						<h3>智能便携式血压、血糖、血氧仪</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[1].detail_path}})">
+							<h4>功能作用</h4>
+							<p>用于检测人体血压、血氧、血糖和脉搏；使用者可以手动或以间隔定时自动测量。</p>
+							<h4>健康服务</h4>
+							<p>测量结果通过无线网络实时上传到云平台，如有异常，监护中心会及时通知使用者及其亲属，必要时会通知120急救中心。该仪器融合了无线传输、定位等多项前沿技术，实现了对终端用户随时随地的健康监护，可称其为小型生命体征监护仪。</p>
+							<h4>技术亮点</h4>
+							<p>
+								<ul>
+									<li>血压测量误差±5%、脉搏误差±1次/分、血氧误差±1%；</li>
+									<li>虹吸式血糖试纸，每次测量仅需1.5微升血量；</li>
+									<li>多用户编号记录功能，可供多人共同使用；</li>
+									<li>大于20组记忆值，方便进行周期性身体状况对比。</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+					<div id="monitor2" onclick="hideDetail(3);" title="点击可返回">
+						<h3>智能便携式无线血糖仪</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[2].detail_path}})">
+							<h4>功能作用</h4>
+							<p>此设备用于检测人体血糖值。</p>
+							<h4>健康服务</h4>
+							<p>测量结果通过无线网络实时上传到云平台，如有异常，监护中心会及时通知使用者及其亲属，必要时会通知120急救中心。该仪器融合了无线传输、定位等多项前沿技术，实现了对终端用户随时随地的健康监护。</p>
+							<h4>技术亮点</h4>
+							<p>
+								<ul>
+									<li>多用户编号记录功能，可供多人共同使用；</li>
+									<li>大于20组记忆值，方便进行周期性身体状况对比；一键通呼叫、定位功能(GPS、北斗)；</li>
+									<li>整机重量58g，测试时间5-15s，需要血量1.5微升，高效又便携。</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+					<div id="weightscale" onclick="hideDetail(4);" title="点击可返回">
+						<h3>智能无线体重秤</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[3].detail_path}})">
+							<h4>功能作用</h4>
+							<p>可以管理多个家庭成员体重、体脂等信息，并自动传输到监护中心及手机。</p>
+							<h4>使用方法</h4>
+							<p>可通过手机或监护中心预先输入家庭成员的基本信息。</p>
+							<h4>技术亮点</h4>
+							<p>
+								<ul>
+									<li>产品使用简单方便，采用ZigBee、蓝牙BLE4.0、WIFI、CDMA、GPRS等方式传输；</li>
+									<li>体积小、重量轻，携带方便；</li>
+									<li>在电池电压过低可能影响正常使用时可视窗口会有低电压警告指示；除更换电池无需日常维护和校准。</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+					<div id="ecg" onclick="hideDetail(5);" title="点击可返回">
+						<h3>智能无线心电仪</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[4].detail_path}})">
+							<h4>功能作用</h4>
+							<p>24小时动态监测用户心电活动情况、记录用户日常生活中不同状态下的心电图资料。监护仪测得的数据通过无线网络实时上传到监护中心，由监护中心进行心电图波形分析、显示及打印，为医生诊断和临床分析提供参考数据。可记录常规心电图不易发现的心律失常和心肌缺血。</p>
+							<h4>健康服务</h4>
+							<p>如果测量数据异常，监护中心会及时通知使用者及其亲属，必要时会通知医院或120急救中心等。该仪器融合了无线传输、定位等多项前沿技术，实现了对终端用户随时随地的健康监护。</p>
+							<h4>技术亮点</h4>
+							<p>
+								<ul>
+									<li>数据存储功能、多用户编号记录可供多人共同使用；</li>
+									<li>单导联心电监护设备、一键呼叫功能、无线网络上传功能；</li>
+									<li>外部电极方式测量精确。</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+					<div id="glu" onclick="hideDetail(6);" title="点击可返回">
+						<h3>智能无线血氧仪</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[5].detail_path}})">
+							<h4>功能作用</h4>
+							<p>此设备用于精确检测人体血氧饱和度及脉率。</p>
+							<h4>适用范围</h4>
+							<p>适用于家庭、运动保健（在运动前后使用，不建议运动过程中使用）、户外活动、氧吧、社区医疗，以及内、外手术科、麻醉科、儿科、急诊室等临床。</p>
+							<h4>技术亮点</h4>
+							<p>
+								<ul>
+									<li>基于数字血氧技术，血氧仪利用红外光技术,透过手指皮肤和肌肉骨骼组织后的光亮度,精确检测人体血氧饱和度和脉率；</li>
+									<li>产品使用简单方便，采用ZigBee、蓝牙BLE4.0方式传输；</li>
+									<li>体积小、重量轻（整机约为50g），携带方便；</li>
+									<li>产品功耗低，可连续监测30小时；</li>
+									<li>除更换电池，无需日常维护和校准。</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+					<div id="mpc1" onclick="hideDetail(7);" title="点击可返回">
+						<h3>呼叫、定位标签</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[6].detail_path}})">
+							<h4>功能作用</h4>
+							<p>具有区域定位跟踪功能，区域呼叫服务、区域报警服务、跌倒提醒、服务区域越界提醒等服务。</p>
+							<h4>投放意义</h4>
+							<p>可实现养老机构、养老公寓、居家等智能养老系统的全区域覆盖，监控中心通过该系统可以第一时间确定老人的所在位置，及时处理老人的紧急需求，能为老年入住者提供一个安全、合适的入住环境。</p>
+							<h4>可应用产品</h4>
+							<p>专用呼叫设备、老人手机、固定电话机、普通手机等，均可作为为呼叫/定位标签。
+							</p>
+						</div>
+					</div>
+					<div id="mpc2" onclick="hideDetail(8);" title="点击可返回">
+						<h3>呼叫、定位标签</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[7].detail_path}})">
+							<h4>功能作用</h4>
+							<p>具有区域定位跟踪功能，区域呼叫服务、区域报警服务、跌倒提醒、服务区域越界提醒等服务。</p>
+							<h4>投放意义</h4>
+							<p>可实现养老机构、养老公寓、居家等智能养老系统的全区域覆盖，监控中心通过该系统可以第一时间确定老人的所在位置，及时处理老人的紧急需求，能为老年入住者提供一个安全、合适的入住环境。</p>
+							<h4>可应用产品</h4>
+							<p>专用呼叫设备、老人手机、固定电话机、普通手机等，均可作为为呼叫/定位标签。
+							</p>
+						</div>
+					</div>
+					<div id="env1" onclick="hideDetail(9);" title="点击可返回">
+						<h3>无线环境传感器</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[8].detail_path}})">
+							<h4>功能作用</h4>
+							<p>可以采集温湿度、光照强度、大气压、一氧化碳、甲醛、苯、PM2.5等，数据会实时上传到监控中心或手机。当检测到异常时，会自动进行声光报警；同时呼叫中心可以及时通知用户，用户也可以通过网络及APP实时获得这些信息。</p>
+							<h4>适用范围</h4>
+							<p>适用家庭及各类场所的环境监测。</p>
+							<h4>技术亮点</h4>
+							<p>
+								<ul>
+									<li>可用电池供电、可以通过ZigBee、WIFI、GPRS、蓝牙、CDMA、GPRS网络进行数据传输；</li>
+									<li>用户可以根据具体使用环境定制外壳。</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+					<div id="env2" onclick="hideDetail(10);" title="点击可返回">
+						<h3>无线环境传感器</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[9].detail_path}})">
+							<h4>功能作用</h4>
+							<p>可以采集温湿度、光照强度、大气压、一氧化碳、甲醛、苯、PM2.5等，数据会实时上传到监控中心或手机。当检测到异常时，会自动进行声光报警；同时呼叫中心可以及时通知用户，用户也可以通过网络及APP实时获得这些信息。</p>
+							<h4>适用范围</h4>
+							<p>适用家庭及各类场所的环境监测。</p>
+							<h4>技术亮点</h4>
+							<p>
+								<ul>
+									<li>可用电池供电、可以通过ZigBee、WIFI、GPRS、蓝牙、CDMA、GPRS网络进行数据传输；</li>
+									<li>用户可以根据具体使用环境定制外壳。</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+					<div id="env3" onclick="hideDetail(11);" title="点击可返回">
+						<h3>无线环境传感器</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[10].detail_path}})">
+							<h4>功能作用</h4>
+							<p>可以采集温湿度、光照强度、大气压、一氧化碳、甲醛、苯、PM2.5等，数据会实时上传到监控中心或手机。当检测到异常时，会自动进行声光报警；同时呼叫中心可以及时通知用户，用户也可以通过网络及APP实时获得这些信息。</p>
+							<h4>适用范围</h4>
+							<p>适用家庭及各类场所的环境监测。</p>
+							<h4>技术亮点</h4>
+							<p>
+								<ul>
+									<li>可用电池供电、可以通过ZigBee、WIFI、GPRS、蓝牙、CDMA、GPRS网络进行数据传输；</li>
+									<li>用户可以根据具体使用环境定制外壳。</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+					<div id="cookhouse1" onclick="hideDetail(12);" title="点击可返回">
+						<h3>无线厨房传感器</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[11].detail_path}})">
+							<h4>功能作用</h4>
+							<p>可以采集温湿度、一氧化碳、甲烷、天然气浓度，数据实时上传到监控中心或手机。当检测到异常时，会自动进行声光报警，同时呼叫中心可以及时通知用户，用户也可以通过网络及APP实时获得这些信息。</p>
+							<h4>适用范围</h4>
+							<p>适用家庭及各类场所的厨房监测。</p>
+							<h4>技术亮点</h4>
+							<p>
+								<ul>
+									<li>可用电池供电、可以通过ZigBee、WIFI、GPRS、蓝牙、CDMA、GPRS网络进行数据传输；</li>
+									<li>用户可以根据具体使用环境定制外壳。</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+					<div id="cookhouse2" onclick="hideDetail(13);" title="点击可返回">
+						<h3>无线厨房传感器</h3>
+						<div class="rowInfo" style="background-image: url({{productImgs[12].detail_path}})">
+							<h4>功能作用</h4>
+							<p>可以采集温湿度、一氧化碳、甲烷、天然气浓度，数据实时上传到监控中心或手机。当检测到异常时，会自动进行声光报警，同时呼叫中心可以及时通知用户，用户也可以通过网络及APP实时获得这些信息。</p>
+							<h4>适用范围</h4>
+							<p>适用家庭及各类场所的厨房监测。</p>
+							<h4>技术亮点</h4>
+							<p>
+								<ul>
+									<li>可用电池供电、可以通过ZigBee、WIFI、GPRS、蓝牙、CDMA、GPRS网络进行数据传输；</li>
+									<li>用户可以根据具体使用环境定制外壳。</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div id="moom" style="overflow:hidden"></div>
+	<script>
+		$( "#moom" ).load( "footer.html", function( response, status, xhr ) {
+		  $('#moom').html(response);
+		});
+	</script>
+	<script>
+		$( "#moon" ).load( "top.html", function( response, status, xhr ) {
+		  $('#moon').html(response);
+		});
+	</script>
+	
+	<script type="text/javascript">
+		function jiaohuan1(){
+			if($("#ssImg").css("display") == 'none'){
+				document.getElementById('img1').src="static/img/fwtx.png";
+			}
+		}
+		function huanyuan1(){
+			if($("#ssImg").css("display") == 'none'){
+				document.getElementById('img1').src="static/img/fwtx1.png";
+			}
+		}
+		function jiaohuan2(){
+			if($("#hcImg").css("display") == 'none'){
+				document.getElementById('img2').src="static/img/ypt.png";
+			}
+		}
+		function huanyuan2(){
+			if($("#hcImg").css("display") == 'none'){
+				document.getElementById('img2').src="static/img/ypt1.png";
+			}
+		}
+		function jiaohuan3(){
+			if($("#hardware").css("display") == 'none'){
+				document.getElementById('img3').src="static/img/znyj.png";
+			}
+		}
+		function huanyuan3(){
+			if($("#hardware").css("display") == 'none'){
+				document.getElementById('img3').src="static/img/znyj1.png";
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		//服务体系点击事件	
+		function fwtxShow(){
+			if($("#ssImg").css("display") == 'none'){
+				if($("#hcImg").css("display") != 'none'){
+					$("#hcImg").fadeOut();
+					$("#psContent").css("height", '782px');
+				}
+				if($("#hardware").css("display") != 'none'){
+					$("#hardware").fadeOut();
+					$("#psContent").css("height", '782px');
+				}
+				$("#img2").attr("src","static/img/ypt1.png");
+				$("#img3").attr("src","static/img/znyj1.png");
+				$("#ssImg").fadeIn(300, function(){ 
+					$("#img1").attr("src","static/img/fwtx.png"); 
+				});
+			}
+		}
+		//云平台
+		function yptShow(){
+			if($("#hcImg").css("display") == 'none'){
+				if($("#ssImg").css("display") != 'none'){
+					$("#ssImg").fadeOut();
+					$("#psContent").css("height", '1471px');
+				}
+				if($("#hardware").css("display") != 'none'){
+					$("#hardware").fadeOut();
+					$("#psContent").css("height", '1471px');
+				}
+				$("#img1").attr("src","static/img/fwtx1.png");
+				$("#img3").attr("src","static/img/znyj1.png");
+				$("#hcImg").fadeIn(300, function(){ 
+					$("#psContent").css("height", '1471px');
+					$("#img2").attr("src","static/img/ypt.png"); 
+				});
+			}
+		}
+		//智能硬件
+		function zhyjShow(){
+			if($("#hardware").css("display") == 'none'){
+				if($("#ssImg").css("display") != 'none'){
+					$("#ssImg").fadeOut();
+				}
+				if($("#hcImg").css("display") != 'none'){
+					$("#hcImg").fadeOut();
+				}
+				$("#img1").attr("src","static/img/fwtx1.png");
+				$("#img2").attr("src","static/img/ypt1.png");
+				$("#hwDetail").children("div").css("display","none");
+				$("#hwContent").css("display","block");
+				$("#psContent").css("height", '2700px');
+				$("#hardware").fadeIn(300, function(){
+					$("#img3").attr("src","static/img/znyj.png"); 
+				});
+			}else if($("#hwContent").css("display") == 'none'){
+				$("#hwDetail").children("div").fadeOut(300,function(){
+					$("#psContent").css("height", '2700px');
+					$("#hwContent").fadeIn(300);
+				});
+			}
+		}
+		//查看产品详情
+		function productDetail(index){
+			if(1==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#watchRow").fadeIn(300);
+				});
+			}else if(2==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#monitor1").fadeIn(300);
+				});
+			}else if(3==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#monitor2").fadeIn(300);
+				});
+			}else if(4==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#weightscale").fadeIn(300);
+				});
+			}else if(5==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#ecg").fadeIn(300);
+				});
+			}else if(6==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#glu").fadeIn(300);
+				});
+			}else if(7==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#mpc1").fadeIn(300);
+				});
+			}else if(8==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#mpc2").fadeIn(300);
+				});
+			}else if(9==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#env1").fadeIn(300);
+				});
+			}else if(10==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#env2").fadeIn(300);
+				});
+			}else if(11==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#env3").fadeIn(300);
+				});
+			}else if(12==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#cookhouse1").fadeIn(300);
+				});
+			}else if(13==index){
+				$("#hwContent").fadeOut(300, function(){
+					$("#psContent").css("height", '600px');
+					$("#cookhouse2").fadeIn(300);
+				});
+			}
+			
+			setTimeout('$("html,body").animate({"scrollTop": "734px"}, 0)', 300);
+		}
+		//隐藏详情
+		function hideDetail(index){
+			if(1==index){
+				$("#watchRow").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(2==index){
+				$("#monitor1").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(3==index){
+				$("#monitor2").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(4==index){
+				$("#weightscale").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("html,body").animate({"scrollTop": "1272px"}, 0);
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(5==index){
+				$("#ecg").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("html,body").animate({"scrollTop": "1272px"}, 0);
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(6==index){
+				$("#glu").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("html,body").animate({"scrollTop": "1272px"}, 0);
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(7==index){
+				$("#mpc1").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("html,body").animate({"scrollTop": "1766px"}, 0);
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(8==index){
+				$("#mpc2").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("html,body").animate({"scrollTop": "1766px"}, 0);
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(9==index){
+				$("#env1").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("html,body").animate({"scrollTop": "2261px"}, 0);
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(10==index){
+				$("#env2").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("html,body").animate({"scrollTop": "2261px"}, 0);
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(11==index){
+				$("#env3").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("html,body").animate({"scrollTop": "2261px"}, 0);
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(12==index){
+				$("#cookhouse1").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("html,body").animate({"scrollTop": "2756px"}, 0);
+					$("#hwContent").fadeIn(300);
+				});
+			}else if(13==index){
+				$("#cookhouse2").fadeOut(300, function(){
+					$("#psContent").css("height", '2700px');
+					$("html,body").animate({"scrollTop": "2756px"}, 0);
+					$("#hwContent").fadeIn(300);
+				});
+			}
+		}
+	</script>
+</body>
+</html>

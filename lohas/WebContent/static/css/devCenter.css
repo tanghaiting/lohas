@@ -1,0 +1,166 @@
+#patPro {
+	width: 60%;
+	height: 700px;
+	margin: 0 auto;
+	background: #eeeeee;
+}
+#patPro h1 {
+	text-align: center;
+	font-size: 30px;
+	line-height: 50px;
+	margin-top: 0;
+}
+#patPro .cntBody, #patPro #cntHeader{
+	height: 50px;
+	margin: 30px 2%;
+	border-radius: 16px;
+	text-align: center;
+	background: #fff;
+}
+#patPro #cntHeader {
+	font-weight: bold;
+	background: #00efc4;
+}
+#patPro .cntBody1 {
+	height: 50px;
+	margin: 30px 2%;
+	border-radius: 16px;
+	text-align: center;
+	background: #00efc4;
+}
+#patPro #cntHeader p{
+	font-size: 18px;
+	float: left;
+	margin: 0 0;
+	line-height: 50px;
+	white-space: nowrap;
+}
+#patPro #cntHeader .p1 {
+	width: 35%;
+}
+#patPro #cntHeader .p2 {
+	width: 15%;
+}
+#patPro #cntHeader .p3 {
+	width: 17%;
+}
+#patPro #cntHeader .p4 {
+	width: 33%;
+}
+
+#patPro .cntBody p{
+	font-size: 18px;
+	float: left;
+	line-height: 50px;
+	margin: 0 0;
+	white-space:nowrap;
+}
+#patPro .cntBody1 p{
+	font-size: 18px;
+	float: left;
+	line-height: 50px;
+	margin: 0 0;
+	white-space: nowrap;
+}
+#patPro .cntBody .p1,#patPro .cntBody1 .p1 {
+	width: 35%;
+}
+#patPro .cntBody .p2,#patPro .cntBody1 .p2 {
+	width: 15%;
+}
+#patPro .cntBody .p3,#patPro .cntBody1 .p3 {
+	width: 17%;
+}
+#patPro .cntBody .p4,#patPro .cntBody1 .p4 {
+	width: 33%;
+}
+
+
+
+
+
+#coreTec {
+	width: 60%;
+	height: 900px;
+	margin: 0 auto;
+	background: #eeeeee;
+	padding-top: 20px;
+}
+#coreTec h1 {
+	text-align: center;
+	font-size: 30px;
+	line-height: 50px;
+	margin-top: 0;
+}
+#coreTec #content div{
+	float: left;
+	width: 23%;
+	margin: 0 1%;
+	height: 300px;
+	background: #fff;
+	margin-top: 50px;
+	border-radius: 16px;
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position-x: 10px;
+	background-position-y: 10px;
+}
+#coreTec #content h5 {
+	margin-top: 60%;
+	text-align: center;
+	font-size: 16px;
+}
+#coreTec #content #cnt1 {
+	background-image: url(../img/cnt1.png)
+}
+#coreTec #content #cnt2 {
+	background-color: #00efc4;
+	background-image: url(../img/cnt2.png)
+}
+#coreTec #content #cnt3 {
+	background-image: url(../img/cnt3.png)
+}
+#coreTec #content #cnt4 {
+	background-color: #00efc4;
+	background-image: url(../img/cnt4.png)
+}
+#coreTec #content #cnt5 {
+	background-image: url(../img/cnt5.png)
+}
+#coreTec #content div p {
+	text-indent: 2em;
+	margin-top: 0;
+	margin-left: 2%;
+	font-size: 16px;
+	line-height: 24px;
+}
+/* 原项目自带部分 */
+html,body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 350px;
+}
+
+body * {
+    font-family: "Microsoft Yahei","Arial";
+    font-size: 14px;
+    color: #333;
+    line-height: 22px;
+}
+
+#wrapper {
+    width: 735px;
+    height: 220px;
+    left: 50%;
+    top: 50%;
+}
+
+.clearfix {
+    width: 700px;
+    float: none;
+    clear: both;
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.contestMapper">
+
+	<!--  <insert id="insertActivity">
+	insert into activity
+	(name,description,expend_ecole,obtain_ecole,created_time,created_id)
+	values(#{name},#{description},#{expendEcole},#{obtainEcole},now(),#{createdId})
+	</insert>
+	
+	 <insert id="insertActivityApply">
+	insert into user_activity_apply
+	(user_id,activity_id,created_time)
+	values(#{code},#{aciitity},now())
+	</insert>
+		
+	
+		
+	<select id="selectActivitys" resultMap="getActivity">
+	select * from activity
+	</select>
+	
+	<select id="selectActivity" resultMap="getActivity">
+	select * from activity where id=#{_parameter}
+	</select> -->
+	<update id="doContest">
+	update user_activity_apply set status=#{status},dispose_id=#{disposeId} where id=#{activity}
+	</update> 
+	
+</mapper>

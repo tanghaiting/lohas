@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.pathMapper">
+    <resultMap type="Path" id="getPath"> 
+		<result column="Path" property="path" />
+    </resultMap>
+	<!-- 获取图片轮播 -->
+	<select id="getImgPath" resultType="java.util.HashMap">
+		select * from tb_pictures limit 5
+	</select>
+	<!-- 获取公告内容 -->
+	<select id="getAndorra" resultType="java.util.HashMap">
+		select * from sys_notice 
+	</select>
+	<!-- 获取产品信息 -->
+	<select id="getNotic" resultType="java.util.HashMap">
+		select * from sys_andorra
+	</select>
+	<!-- 获取公司动态 -->
+	<select id="getNews" resultType="java.util.HashMap">
+		select 
+			id,
+			title,
+			content,
+			publisher,
+			addtime,
+			uptime,
+			pip,
+			hits,
+			sequence,
+			recommand,
+			status
+		 from 
+		 	sys_news
+		 where
+		 	status = '1'
+		 order by
+		 	sequence desc
+	</select>
+	<!-- 根据id获取公司动态 -->
+	<select id="getNewsDetail" resultType="java.util.HashMap">
+		select 
+			id,
+			title,
+			content,
+			publisher,
+			addtime,
+			uptime,
+			pip,
+			hits,
+			sequence,
+			recommand,
+			status
+		 from 
+		 	sys_news
+		 where
+		 	status = '1'
+		 and
+		 	id=#{id}
+	</select>
+</mapper>
+		
