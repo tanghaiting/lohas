@@ -23,7 +23,7 @@ public class NewsService extends SqlSessionDaoSupport{
 		}
 		return list;
 	}
-
+	//详细信息
 	public Map<String, Object> getNewsDetail(Integer id) {
 		return this.getSqlSession().selectOne("mapper.pathMapper.getNewsDetail", id);
 	}
