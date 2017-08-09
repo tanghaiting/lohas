@@ -27,7 +27,7 @@ public class PathApi {
 	}
 	/**
 	 * 获取产品图片信息
-	 * @return
+	 * @return 图片集合
 	 */
 	@GET
 	@Path("productImgs")
