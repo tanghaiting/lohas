@@ -27,4 +27,5 @@ public class NewsService extends SqlSessionDaoSupport{
 	public Map<String, Object> getNewsDetail(Integer id) {
 		return this.getSqlSession().selectOne("mapper.pathMapper.getNewsDetail", id);
 	}
+	
 }
